@@ -10,102 +10,90 @@ export const contactDetails = {
 
 export const navGroups = [
   {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "About The Community",
+    label: "Community",
     href: "/about",
     links: [
-      {
-        label: "Overview",
-        href: "/about",
-        description: "Get to know Hayat, our setting, and our approach.",
-      },
-      {
-        label: "Amenities",
-        href: "/amenities",
-        description: "See the comforts and conveniences available each day.",
-      },
-      {
-        label: "Testimonials",
-        href: "/testimonials",
-        description: "Hear how residents and families describe the experience.",
-      },
-      {
-        label: "Activities & Events",
-        href: "/activities-events",
-        description: "Explore social programs, outings, and daily gatherings.",
-      },
-      {
-        label: "Life Enrichment",
-        href: "/wellness",
-        description: "Discover the wellness and engagement programs at Hayat.",
-      },
-      {
-        label: "Dining Experience",
-        href: "/dining",
-        description: "Learn how meals, hospitality, and nutrition are handled.",
-      },
+      { label: "About Us", href: "/about", description: "Get to know Hayat, our setting, and our approach." },
+      { label: "Our Facility", href: "/community/our-facility", description: "See the spaces, upgrades, and design that shape daily life." },
+      { label: "Testimonials", href: "/testimonials", description: "Hear how residents and families describe the experience." },
     ],
   },
   {
-    label: "Care Options",
+    label: "Amenities & Services",
+    href: "/amenities",
+    links: [
+      { label: "Amenities", href: "/amenities", description: "Comforts and conveniences available each day." },
+      { label: "Activities & Events", href: "/activities-events", description: "Social programs, outings, and daily gatherings." },
+      { label: "Life Enrichment", href: "/wellness", description: "Wellness and engagement programs at Hayat." },
+      { label: "Dining Experience", href: "/dining", description: "Meals, hospitality, and nutrition handled with care." },
+    ],
+  },
+  {
+    label: "Living Options",
     href: "/services",
     links: [
-      {
-        label: "Assisted Support",
-        href: "/services",
-        description: "Personalized care, daily support, and wellness oversight.",
-      },
-      {
-        label: "Move-In Process",
-        href: "/enrollment",
-        description: "Review the consultation, assessment, and transition steps.",
-      },
+      { label: "Assisted Living", href: "/services", description: "Personalized care, daily support, and wellness oversight." },
+      { label: "Move-In Process", href: "/enrollment", description: "Consultation, assessment, and transition steps." },
     ],
   },
   {
-    label: "See Our Community",
+    label: "Gallery & Floor Plans",
     href: "/floor-plans",
     links: [
-      {
-        label: "Floor Plans",
-        href: "/floor-plans",
-        description: "Browse suite layouts and compare available footprints.",
-      },
-      {
-        label: "Contact Us",
-        href: "/contact",
-        description: "Schedule a tour or request a callback from our team.",
-      },
+      { label: "Floor Plans", href: "/floor-plans", description: "Browse suite layouts and compare footprints." },
+      { label: "Photos", href: "/gallery/photos", description: "View our community spaces, suites, and grounds." },
+      { label: "Videos", href: "/gallery/videos", description: "Watch walkthrough tours and community highlights." },
     ],
   },
   {
-    label: "FAQ",
-    href: "/faq",
+    label: "Resources",
+    href: "/resources/blog",
+    links: [
+      { label: "Blog", href: "/resources/blog", description: "Articles on senior wellness, lifestyle, and community." },
+      { label: "Senior Living Guide", href: "/resources/senior-living-guide", description: "Helpful information for families exploring options." },
+      { label: "FAQ", href: "/faq", description: "Common questions answered clearly." },
+    ],
+  },
+  {
+    label: "Contact & Careers",
+    href: "/contact",
+    links: [
+      { label: "Contact Us", href: "/contact", description: "Schedule a tour or request a callback." },
+      { label: "Careers", href: "/careers", description: "Join the Hayat Care Center team." },
+    ],
   },
 ] as const;
 
 export const footerLinkGroups = [
   {
-    title: "About The Community",
+    title: "Community",
     links: [
-      { label: "Overview", href: "/about" },
-      { label: "Amenities", href: "/amenities" },
+      { label: "About Us", href: "/about" },
+      { label: "Our Facility", href: "/community/our-facility" },
       { label: "Testimonials", href: "/testimonials" },
+      { label: "Amenities", href: "/amenities" },
       { label: "Activities & Events", href: "/activities-events" },
       { label: "Life Enrichment", href: "/wellness" },
       { label: "Dining Experience", href: "/dining" },
     ],
   },
   {
-    title: "Care Options",
+    title: "Living & Gallery",
     links: [
-      { label: "Assisted Support", href: "/services" },
+      { label: "Assisted Living", href: "/services" },
       { label: "Move-In Process", href: "/enrollment" },
       { label: "Floor Plans", href: "/floor-plans" },
+      { label: "Photos", href: "/gallery/photos" },
+      { label: "Videos", href: "/gallery/videos" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Blog", href: "/resources/blog" },
+      { label: "Senior Living Guide", href: "/resources/senior-living-guide" },
       { label: "FAQ", href: "/faq" },
+      { label: "Careers", href: "/careers" },
     ],
   },
 ] as const;
@@ -427,6 +415,201 @@ export const testimonials = [
     quote: "I like that there is always something happening, but I can also find a quiet place when I want one.",
     name: "Resident Testimonial",
     role: "Community Resident",
+  },
+] as const;
+
+export const facilitySpaces = [
+  {
+    title: "Welcome Lobby & Reception",
+    description: "A bright, open entry area with comfortable seating, natural light, and a warm tone that sets the standard for the rest of the community.",
+  },
+  {
+    title: "Great Room & Social Lounge",
+    description: "A versatile gathering space used for events, casual conversations, family visits, and community celebrations throughout the week.",
+  },
+  {
+    title: "Full-Service Dining Hall",
+    description: "A restaurant-style dining room where residents enjoy chef-prepared meals in a relaxed, social atmosphere with table service.",
+  },
+  {
+    title: "Activity & Enrichment Room",
+    description: "A dedicated space for creative workshops, game sessions, guided programs, and group activities that keep the calendar full.",
+  },
+  {
+    title: "Library & Quiet Retreat",
+    description: "A peaceful reading nook with books, comfortable chairs, and a calm atmosphere for residents who enjoy downtime.",
+  },
+  {
+    title: "Fitness & Wellness Studio",
+    description: "An accessible fitness area designed for balance classes, chair exercises, stretching sessions, and wellness-focused routines.",
+  },
+  {
+    title: "Courtyard & Garden Paths",
+    description: "Landscaped outdoor areas with shaded seating, walking paths, and garden views that encourage fresh air and gentle movement.",
+  },
+  {
+    title: "Beauty & Grooming Salon",
+    description: "An on-site salon where residents can enjoy haircuts, styling, and personal care services in a comfortable setting.",
+  },
+] as const;
+
+export const blogPosts = [
+  {
+    title: "How Daily Routines Support Emotional Wellness In Senior Living",
+    excerpt: "A consistent rhythm of meals, activities, and rest can help older adults feel more grounded, confident, and connected to their community.",
+    readTime: "5 min",
+    date: "March 28, 2026",
+    category: "Wellness",
+  },
+  {
+    title: "What Families Should Know Before Touring An Assisted Living Community",
+    excerpt: "Knowing which questions to ask and what details to notice during a tour can help families make a more informed and confident decision.",
+    readTime: "6 min",
+    date: "March 15, 2026",
+    category: "Family Guide",
+  },
+  {
+    title: "The Role Of Social Connection In Healthy Aging",
+    excerpt: "Research consistently shows that regular social interaction improves cognitive health, mood, and overall quality of life for seniors.",
+    readTime: "4 min",
+    date: "March 3, 2026",
+    category: "Health",
+  },
+  {
+    title: "Understanding The Difference Between Independent And Assisted Living",
+    excerpt: "Choosing the right level of support starts with understanding what each option includes and how it matches your loved one's daily needs.",
+    readTime: "7 min",
+    date: "February 20, 2026",
+    category: "Senior Living",
+  },
+  {
+    title: "Nutrition Tips That Help Seniors Stay Energized Throughout The Day",
+    excerpt: "Small adjustments to meal timing, hydration, and nutrient balance can make a noticeable difference in how active and alert older adults feel.",
+    readTime: "5 min",
+    date: "February 8, 2026",
+    category: "Nutrition",
+  },
+  {
+    title: "How Creative Activities Keep The Mind Sharp With Age",
+    excerpt: "Art, music, storytelling, and hands-on projects engage memory and focus in ways that support long-term cognitive health.",
+    readTime: "5 min",
+    date: "January 25, 2026",
+    category: "Wellness",
+  },
+] as const;
+
+export const seniorLivingGuideTopics = [
+  {
+    title: "When Is The Right Time To Consider Senior Living?",
+    description: "Recognizing the signs that a loved one may benefit from a community setting, including safety concerns, social isolation, and increasing care needs.",
+  },
+  {
+    title: "Types Of Senior Living Communities Explained",
+    description: "A clear breakdown of independent living, assisted living, memory care, and skilled nursing so families can compare options with confidence.",
+  },
+  {
+    title: "What To Expect During A Community Tour",
+    description: "A practical checklist of things to look for, questions to ask, and details to observe when visiting a senior living community.",
+  },
+  {
+    title: "How To Talk To A Parent About Senior Living",
+    description: "Tips for starting a respectful conversation about transitioning to a community, including how to address concerns and set realistic expectations.",
+  },
+  {
+    title: "Financial Planning For Assisted Living",
+    description: "An overview of typical costs, payment options, and planning strategies that help families prepare for the financial side of senior care.",
+  },
+  {
+    title: "Making The Transition Smooth And Comfortable",
+    description: "Guidance on what to pack, how to personalize a new suite, and ways to help a loved one feel at home during the first weeks.",
+  },
+] as const;
+
+export const careerOpenings = [
+  {
+    title: "Certified Nursing Assistant (CNA)",
+    type: "Full-Time",
+    description: "Provide hands-on daily support to residents with compassion, dignity, and attention to individual care plans.",
+  },
+  {
+    title: "Activities Coordinator",
+    type: "Full-Time",
+    description: "Plan and lead enrichment programs, social events, and creative workshops that keep residents engaged and connected.",
+  },
+  {
+    title: "Dining Services Associate",
+    type: "Part-Time",
+    description: "Support meal preparation, table service, and dining room hospitality for residents and their guests.",
+  },
+  {
+    title: "Housekeeping Team Member",
+    type: "Full-Time",
+    description: "Maintain clean, welcoming living spaces and common areas that reflect the community's standard of care.",
+  },
+  {
+    title: "Front Desk & Reception",
+    type: "Part-Time",
+    description: "Welcome visitors, coordinate schedules, and serve as a friendly first point of contact for families and residents.",
+  },
+] as const;
+
+export const careerBenefits = [
+  "Competitive pay and shift flexibility",
+  "Paid training and professional development",
+  "Health, dental, and vision insurance options",
+  "Supportive team culture and mentorship",
+  "Meaningful work that makes a daily difference",
+  "Opportunities for career advancement",
+] as const;
+
+export const photoCategories = [
+  {
+    title: "Exterior & Grounds",
+    count: 8,
+    description: "Building facades, landscaped pathways, and outdoor seating areas that define the community's curb appeal.",
+  },
+  {
+    title: "Common Areas & Lounges",
+    count: 10,
+    description: "The lobby, great room, library, and social spaces where residents gather, relax, and connect.",
+  },
+  {
+    title: "Dining Spaces",
+    count: 6,
+    description: "The main dining hall and private dining areas where meals and celebrations take place.",
+  },
+  {
+    title: "Activity & Wellness Rooms",
+    count: 6,
+    description: "Fitness studio, enrichment room, and creative spaces designed for daily programming.",
+  },
+  {
+    title: "Suite Interiors",
+    count: 10,
+    description: "Sample layouts of studio, one-bedroom, and companion suites showing finishes and natural light.",
+  },
+  {
+    title: "Outdoor Living",
+    count: 6,
+    description: "Courtyards, garden paths, and patio areas that bring nature into the daily routine.",
+  },
+] as const;
+
+export const videoHighlights = [
+  {
+    title: "Community Walkthrough Tour",
+    description: "A guided tour through the lobby, common areas, dining room, activity spaces, and model suites at Hayat Care Center.",
+    duration: "4:30",
+  },
+  {
+    title: "A Day In The Life At Hayat",
+    description: "See how residents spend a typical day, from morning routines and meals to activities, social time, and evening wind-down.",
+    duration: "3:15",
+  },
+  {
+    title: "Meet The Hayat Team",
+    description: "Hear from the care team, dining staff, and activity coordinators about what makes the Hayat community special.",
+    duration: "2:45",
   },
 ] as const;
 

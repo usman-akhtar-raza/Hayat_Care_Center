@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BorderGlow from "@/components/reactbits/BorderGlow";
+import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { diningFeatures } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -18,13 +20,16 @@ export default function DiningPage() {
           >
             Dining Experience
           </p>
-          <h1
-            data-reveal
-            data-reveal-delay={90}
-            className="mt-3 max-w-4xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
-          >
-            Meals Designed Around Hospitality, Routine, And Resident Enjoyment
-          </h1>
+          <div data-reveal data-reveal-delay={90}>
+            <ScrollFloat
+              as="h1"
+              containerClassName="mt-3 max-w-4xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
+              textClassName="text-balance"
+            >
+              Meals Designed Around Hospitality, Routine, And Resident
+              Enjoyment
+            </ScrollFloat>
+          </div>
           <p
             data-reveal
             data-reveal-delay={180}
@@ -41,50 +46,60 @@ export default function DiningPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {diningFeatures.map((item, index) => (
-              <article
+              <BorderGlow
                 key={item.title}
                 data-reveal
                 data-reveal-delay={index * 80}
                 data-tilt
-                className="rounded-2xl bg-white p-6 ring-1 ring-[var(--line)]"
+                className="h-full"
+                borderRadius={16}
+                glowRadius={24}
               >
-                <h2 className="text-xl font-bold text-[var(--ink)]">{item.title}</h2>
-                <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
-                  {item.text}
-                </p>
-              </article>
+                <article className="h-full rounded-2xl bg-white p-6">
+                  <h2 className="text-xl font-bold text-[var(--ink)]">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
+                    {item.text}
+                  </p>
+                </article>
+              </BorderGlow>
             ))}
           </div>
 
-          <div
+          <BorderGlow
             data-reveal
             data-reveal-delay={180}
             data-tilt
-            className="mt-10 rounded-3xl bg-[var(--bg)] p-8 ring-1 ring-[var(--line)]"
+            className="mt-10 h-full"
+            borderRadius={24}
+            glowRadius={30}
           >
-            <h3 className="text-2xl font-bold text-[var(--ink)]">
-              Dining Should Feel Like A Highlight, Not A Task
-            </h3>
-            <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--ink-soft)]">
-              Hayat&apos;s dining philosophy is simple: create an atmosphere where
-              meals are enjoyable, thoughtfully prepared, and easy to navigate
-              for different preferences and support needs.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/amenities"
-                className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
-              >
-                Explore Amenities
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"
-              >
-                Schedule A Visit
-              </Link>
+            <div className="h-full rounded-3xl bg-[var(--bg)] p-8">
+              <h3 className="text-2xl font-bold text-[var(--ink)]">
+                Dining Should Feel Like A Highlight, Not A Task
+              </h3>
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--ink-soft)]">
+                Hayat&apos;s dining philosophy is simple: create an atmosphere where
+                meals are enjoyable, thoughtfully prepared, and easy to navigate
+                for different preferences and support needs.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/amenities"
+                  className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
+                >
+                  Explore Amenities
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"
+                >
+                  Schedule A Visit
+                </Link>
+              </div>
             </div>
-          </div>
+          </BorderGlow>
         </div>
       </section>
     </>

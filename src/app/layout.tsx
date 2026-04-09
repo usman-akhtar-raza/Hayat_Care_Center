@@ -18,9 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="min-h-full flex flex-col bg-[var(--bg)] text-[var(--ink)]">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <MotionEffects />
         <Header />
-        <main className="relative z-0 flex-1">{children}</main>
+        <main id="main-content" className="relative flex-1">
+          {children}
+        </main>
         <div className="relative z-0">
           <Footer />
         </div>

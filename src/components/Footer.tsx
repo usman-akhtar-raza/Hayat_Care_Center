@@ -5,14 +5,14 @@ import { contactDetails, footerLinkGroups } from "@/data/siteContent";
 export default function Footer() {
   return (
     <footer className="mt-14 bg-[var(--brand-navy)] text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-[1.1fr_0.9fr_0.9fr_0.9fr]">
-        <div>
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_0.9fr_0.8fr_0.9fr]">
+        <div >
           <Image
-            src="/hayat-logo.png"
+            src="/hayat-logo.jpg"
             alt="Hayat Care Center"
             width={220}
             height={80}
-            className="h-auto w-[180px] rounded-2xl bg-white p-3"
+            className="h-auto w-[180px] rounded-2xl bg-white "
           />
           <p className="mt-4 max-w-sm text-sm leading-6 text-blue-100">
             Hayat Care Center brings together assisted support, life enrichment,

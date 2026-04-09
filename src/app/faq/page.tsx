@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BorderGlow from "@/components/reactbits/BorderGlow";
+import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { faqs } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -18,13 +20,15 @@ export default function FaqPage() {
           >
             FAQ
           </p>
-          <h1
-            data-reveal
-            data-reveal-delay={90}
-            className="mt-3 max-w-3xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
-          >
-            Answers To Common Questions About The Community
-          </h1>
+          <div data-reveal data-reveal-delay={90}>
+            <ScrollFloat
+              as="h1"
+              containerClassName="mt-3 max-w-3xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
+              textClassName="text-balance"
+            >
+              Answers To Common Questions About The Community
+            </ScrollFloat>
+          </div>
           <p
             data-reveal
             data-reveal-delay={180}
@@ -40,41 +44,50 @@ export default function FaqPage() {
         <div className="mx-auto max-w-4xl px-4">
           <div className="space-y-3">
             {faqs.map((item, index) => (
-              <details
+              <BorderGlow
                 key={item.q}
                 data-reveal
                 data-reveal-delay={index * 70}
                 data-tilt
-                className="rounded-xl bg-white p-5 ring-1 ring-[var(--line)]"
+                borderRadius={14}
+                glowRadius={20}
               >
-                <summary className="cursor-pointer list-none pr-7 text-sm font-bold text-[var(--ink)] marker:content-none">
-                  {item.q}
-                </summary>
-                <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">{item.a}</p>
-              </details>
+                <details className="rounded-xl bg-white p-5">
+                  <summary className="cursor-pointer list-none pr-7 text-sm font-bold text-[var(--ink)] marker:content-none">
+                    {item.q}
+                  </summary>
+                  <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
+                    {item.a}
+                  </p>
+                </details>
+              </BorderGlow>
             ))}
           </div>
 
-          <div
+          <BorderGlow
             data-reveal
             data-reveal-delay={160}
             data-tilt
-            className="mt-10 rounded-2xl bg-white p-7 text-center ring-1 ring-[var(--line)]"
+            className="mt-10 h-full"
+            borderRadius={18}
+            glowRadius={24}
           >
-            <h2 className="text-2xl font-bold text-[var(--ink)]">
-              Need A More Specific Answer?
-            </h2>
-            <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
-              Our team can walk through your family&apos;s timeline, priorities,
-              and questions one-on-one.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"
-            >
-              Contact Hayat
-            </Link>
-          </div>
+            <div className="h-full rounded-2xl bg-white p-7 text-center">
+              <h2 className="text-2xl font-bold text-[var(--ink)]">
+                Need A More Specific Answer?
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
+                Our team can walk through your family&apos;s timeline, priorities,
+                and questions one-on-one.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-6 inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"
+              >
+                Contact Hayat
+              </Link>
+            </div>
+          </BorderGlow>
         </div>
       </section>
     </>

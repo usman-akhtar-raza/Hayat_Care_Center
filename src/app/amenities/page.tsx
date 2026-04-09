@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BorderGlow from "@/components/reactbits/BorderGlow";
+import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { amenities } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -18,13 +20,15 @@ export default function AmenitiesPage() {
           >
             Amenities
           </p>
-          <h1
-            data-reveal
-            data-reveal-delay={90}
-            className="mt-3 max-w-4xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
-          >
-            Comforts And Conveniences That Shape Everyday Life
-          </h1>
+          <div data-reveal data-reveal-delay={90}>
+            <ScrollFloat
+              as="h1"
+              containerClassName="mt-3 max-w-4xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
+              textClassName="text-balance"
+            >
+              Comforts And Conveniences That Shape Everyday Life
+            </ScrollFloat>
+          </div>
           <p
             data-reveal
             data-reveal-delay={180}
@@ -41,18 +45,24 @@ export default function AmenitiesPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {amenities.map((item, index) => (
-              <article
+              <BorderGlow
                 key={item.title}
                 data-reveal
                 data-reveal-delay={index * 70}
                 data-tilt
-                className="rounded-2xl bg-white p-6 ring-1 ring-[var(--line)]"
+                className="h-full"
+                borderRadius={16}
+                glowRadius={24}
               >
-                <h2 className="text-xl font-bold text-[var(--ink)]">{item.title}</h2>
-                <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
-                  {item.description}
-                </p>
-              </article>
+                <article className="h-full rounded-2xl bg-white p-6">
+                  <h2 className="text-xl font-bold text-[var(--ink)]">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
+                    {item.description}
+                  </p>
+                </article>
+              </BorderGlow>
             ))}
           </div>
 
