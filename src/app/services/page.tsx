@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BorderGlow from "@/components/reactbits/BorderGlow";
+import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { livingOptionBenefits, services } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -18,13 +20,15 @@ export default function ServicesPage() {
           >
             Care Options
           </p>
-          <h1
-            data-reveal
-            data-reveal-delay={90}
-            className="mt-3 max-w-3xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
-          >
-            Assisted Support That Adds Confidence To Everyday Living
-          </h1>
+          <div data-reveal data-reveal-delay={90}>
+            <ScrollFloat
+              as="h1"
+              containerClassName="mt-3 max-w-3xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
+              textClassName="text-balance"
+            >
+              Assisted Support That Adds Confidence To Everyday Living
+            </ScrollFloat>
+          </div>
           <p
             data-reveal
             data-reveal-delay={180}
@@ -41,84 +45,98 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {livingOptionBenefits.map((item, index) => (
-              <article
+              <BorderGlow
                 key={item.title}
                 data-reveal
                 data-reveal-delay={index * 90}
                 data-tilt
-                className="rounded-2xl bg-white p-6 ring-1 ring-[var(--line)]"
+                className="h-full"
+                borderRadius={18}
+                glowRadius={24}
               >
-                <h2 className="text-xl font-bold text-[var(--ink)]">{item.title}</h2>
-                <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
-                  {item.text}
-                </p>
-              </article>
+                <article className="h-full rounded-2xl bg-white p-6">
+                  <h2 className="text-xl font-bold text-[var(--ink)]">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
+                    {item.text}
+                  </p>
+                </article>
+              </BorderGlow>
             ))}
           </div>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
-              <article
+              <BorderGlow
                 key={service.title}
                 data-reveal
                 data-reveal-delay={index * 70}
                 data-tilt
-                className="rounded-2xl bg-[var(--bg)] p-6 shadow-sm ring-1 ring-[var(--line)] transition hover:-translate-y-1 hover:shadow-lg"
+                className="h-full"
+                borderRadius={18}
+                glowRadius={26}
               >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[var(--brand-blue)] ring-1 ring-[var(--line)]">
-                  <svg
-                    className="h-6 w-6"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d={service.icon}
-                    />
-                  </svg>
-                </div>
-                <h3 className="mt-4 text-xl font-bold text-[var(--ink)]">
-                  {service.title}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
-                  {service.description}
-                </p>
-              </article>
+                <article className="h-full rounded-2xl bg-[var(--bg)] p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[var(--brand-blue)] ring-1 ring-[var(--line)]">
+                    <svg
+                      className="h-6 w-6"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d={service.icon}
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="mt-4 text-xl font-bold text-[var(--ink)]">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">
+                    {service.description}
+                  </p>
+                </article>
+              </BorderGlow>
             ))}
           </div>
 
-          <div
+          <BorderGlow
             data-reveal
             data-reveal-delay={180}
             data-tilt
-            className="mt-10 rounded-2xl bg-white p-7 ring-1 ring-[var(--line)]"
+            className="mt-10 h-full"
+            borderRadius={18}
+            glowRadius={24}
           >
-            <h3 className="text-2xl font-bold text-[var(--ink)]">
-              Want Help Choosing The Right Level Of Support?
-            </h3>
-            <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
-              We can walk through daily routines, care expectations, family
-              priorities, and the type of suite or services that would be the
-              best fit for your next step.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"
-              >
-                Talk To The Team
-              </Link>
-              <Link
-                href="/enrollment"
-                className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
-              >
-                Review The Move-In Process
-              </Link>
+            <div className="h-full rounded-2xl bg-white p-7">
+              <h3 className="text-2xl font-bold text-[var(--ink)]">
+                Want Help Choosing The Right Level Of Support?
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
+                We can walk through daily routines, care expectations, family
+                priorities, and the type of suite or services that would be the
+                best fit for your next step.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="inline-flex rounded-full bg-[var(--brand-orange)] px-6 py-3 text-sm font-bold text-white"
+                >
+                  Talk To The Team
+                </Link>
+                <Link
+                  href="/enrollment"
+                  className="inline-flex rounded-full bg-[var(--brand-navy)] px-6 py-3 text-sm font-bold text-white"
+                >
+                  Review The Move-In Process
+                </Link>
+              </div>
             </div>
-          </div>
+          </BorderGlow>
         </div>
       </section>
     </>
