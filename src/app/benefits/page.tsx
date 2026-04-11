@@ -7,11 +7,60 @@ import BorderGlow from "@/components/reactbits/BorderGlow";
 import BenefitsTimeline from "@/components/benefits/BenefitsTimeline";
 import BenefitsHero from "@/components/benefits/BenefitsHero";
 import {
+  type LucideIcon,
+  Palette,
+  Dumbbell,
+  MapPinned,
+  Sparkles,
+  UsersRound,
+  ShieldCheck,
+  HandHelping,
+  Pill,
+  SprayCan,
+  Bus,
+} from "lucide-react";
+import {
   benefitHighlights,
   mealBenefits,
   lifestyleBenefits,
   benefitsCta,
 } from "@/data/siteContent";
+
+const lifestyleIconMap: Record<string, LucideIcon> = {
+  Palette,
+  Dumbbell,
+  MapPinned,
+  Sparkles,
+  UsersRound,
+  ShieldCheck,
+};
+
+const includedServiceItems: ReadonlyArray<{
+  title: string;
+  text: string;
+  icon: LucideIcon;
+}> = [
+  {
+    title: "Personal Care Assistance",
+    text: "Bathing, dressing, grooming, and toileting support delivered with dignity and patience.",
+    icon: HandHelping,
+  },
+  {
+    title: "Medication Management",
+    text: "Structured reminders, observation, and coordination with pharmacies and physicians.",
+    icon: Pill,
+  },
+  {
+    title: "Housekeeping & Laundry",
+    text: "Clean living spaces and fresh linens so residents can focus on enjoying community life.",
+    icon: SprayCan,
+  },
+  {
+    title: "Scheduled Transportation",
+    text: "Rides to medical appointments, errands, and community outings—coordinated and dependable.",
+    icon: Bus,
+  },
+];
 
 export const metadata: Metadata = {
   title: "Benefits | Hayat Care Centers",
@@ -19,10 +68,6 @@ export const metadata: Metadata = {
     "Discover the full range of benefits at Hayat Care Centers—meals, activities, wellness, companionship, and family peace of mind.",
 };
 
-const btnPrimary =
-  "inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[var(--brand-gold-bright)]";
-const btnOutline =
-  "inline-flex items-center justify-center rounded-full border-2 border-[#073D7A] bg-[#073D7A] px-6 py-3 text-sm font-semibold text-white transition hover:border-[#052a52] hover:bg-[#052a52]";
 const sectionEyebrow =
   "text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-gold)]";
 
@@ -122,27 +167,29 @@ export default function BenefitsPage() {
           </div>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {lifestyleBenefits.map((item, index) => (
-              <SpotlightCard
-                key={item.title}
-                className="h-full rounded-2xl border border-slate-200 bg-white"
-                spotlightColor="rgba(213, 102, 75, 0.10)"
-              >
-                <div
-                  data-reveal
-                  data-reveal-delay={index * 60}
-                  className="flex h-full flex-col p-6"
+            {lifestyleBenefits.map((item, index) => {
+              const LifestyleIcon = lifestyleIconMap[item.lucideIcon] ?? Sparkles;
+
+              return (
+                <SpotlightCard
+                  key={item.title}
+                  className="h-full rounded-2xl border border-slate-200 bg-white"
+                  spotlightColor="rgba(213, 102, 75, 0.10)"
                 >
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--brand-navy)] to-[var(--brand-sky)] text-white shadow-sm">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
-                      <path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                    </svg>
+                  <div
+                    data-reveal
+                    data-reveal-delay={index * 60}
+                    className="flex h-full flex-col p-6"
+                  >
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--brand-navy)] to-[var(--brand-sky)] text-white shadow-sm">
+                      <LifestyleIcon className="h-5 w-5" strokeWidth={1.8} aria-hidden />
+                    </div>
+                    <h3 className="mt-4 text-base font-bold text-slate-900">{item.title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{item.text}</p>
                   </div>
-                  <h3 className="mt-4 text-base font-bold text-slate-900">{item.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{item.text}</p>
-                </div>
-              </SpotlightCard>
-            ))}
+                </SpotlightCard>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -189,48 +236,29 @@ export default function BenefitsPage() {
           </div>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              {
-                title: "Personal Care Assistance",
-                text: "Bathing, dressing, grooming, and toileting support delivered with dignity and patience.",
-                icon: "M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM4 20a8 8 0 1 1 16 0",
-              },
-              {
-                title: "Medication Management",
-                text: "Structured reminders, observation, and coordination with pharmacies and physicians.",
-                icon: "M12 21s-6-4.35-6-9a6 6 0 0 1 12 0c0 4.65-6 9-6 9Zm0-10V7m-2 2h4",
-              },
-              {
-                title: "Housekeeping & Laundry",
-                text: "Clean living spaces and fresh linens so residents can focus on enjoying community life.",
-                icon: "M3 4h18M8 4v16m8-16v16M4 9h4m8 0h4M4 15h4m8 0h4",
-              },
-              {
-                title: "Scheduled Transportation",
-                text: "Rides to medical appointments, errands, and community outings—coordinated and dependable.",
-                icon: "M8 17h8M7 7h10l2 6H5l2-6Zm1 10a1 1 0 1 0 0 .01M16 17a1 1 0 1 0 0 .01",
-              },
-            ].map((item, index) => (
-              <BorderGlow
-                key={item.title}
-                data-reveal
-                data-reveal-delay={index * 70}
-                data-tilt
-                className="h-full"
-                borderRadius={16}
-                glowRadius={24}
-              >
-                <article className="flex h-full flex-col rounded-2xl bg-white p-6">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50 text-amber-800">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
-                      <path strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                    </svg>
-                  </div>
-                  <h3 className="mt-3 text-base font-bold text-slate-900">{item.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{item.text}</p>
-                </article>
-              </BorderGlow>
-            ))}
+            {includedServiceItems.map((item, index) => {
+              const ServiceIcon = item.icon;
+
+              return (
+                <BorderGlow
+                  key={item.title}
+                  data-reveal
+                  data-reveal-delay={index * 70}
+                  data-tilt
+                  className="h-full"
+                  borderRadius={16}
+                  glowRadius={24}
+                >
+                  <article className="flex h-full flex-col rounded-2xl bg-white p-6">
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50 text-amber-800">
+                      <ServiceIcon className="h-5 w-5" strokeWidth={1.8} aria-hidden />
+                    </div>
+                    <h3 className="mt-3 text-base font-bold text-slate-900">{item.title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{item.text}</p>
+                  </article>
+                </BorderGlow>
+              );
+            })}
           </div>
         </div>
       </section>

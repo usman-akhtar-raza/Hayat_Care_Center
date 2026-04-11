@@ -834,7 +834,7 @@ export const benefitHighlights = [
     label: "Chef-prepared meals daily",
     description:
       "Breakfast, lunch, and dinner crafted with seasonal ingredients, dietary accommodations, and the warmth of shared dining.",
-    icon: "M4 6h16M7 3v6m10-6v6M5 11h14v8H5z",
+    lucideIcon: "UtensilsCrossed",
     image: "/images/home/gallery-dining-social.jpg",
   },
   {
@@ -842,7 +842,7 @@ export const benefitHighlights = [
     label: "Days of structured activities",
     description:
       "Social gatherings, creative workshops, movement classes, and outings fill every day of the week—not just weekdays.",
-    icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z",
+    lucideIcon: "CalendarHeart",
     image: "/images/home/gallery-wellness-programs.jpg",
   },
   {
@@ -850,7 +850,7 @@ export const benefitHighlights = [
     label: "Attentive care coordination",
     description:
       "Round-the-clock oversight, medication reminders, and responsive communication so families never feel out of the loop.",
-    icon: "M12 6v6l4 2m6-2a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z",
+    lucideIcon: "HeartHandshake",
     image: "/images/home/gallery-compassionate-care.jpg",
   },
   {
@@ -858,7 +858,7 @@ export const benefitHighlights = [
     label: "Personalized wellness plans",
     description:
       "Every resident receives a tailored plan built around mobility, preferences, health goals, and family input—never a one-size template.",
-    icon: "M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2",
+    lucideIcon: "ClipboardCheck",
     image: "/images/home/gallery-comfortable-lounge.jpg",
   },
 ] as const;
@@ -886,32 +886,32 @@ export const lifestyleBenefits = [
   {
     title: "Creative Workshops",
     text: "Art, music, storytelling, and hands-on projects that keep the mind active and give residents something to look forward to.",
-    icon: "M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.764m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42",
+    lucideIcon: "Palette",
   },
   {
     title: "Fitness & Balance Programs",
     text: "Chair yoga, guided stretching, walking groups, and strength routines designed for confidence and safe movement.",
-    icon: "M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z",
+    lucideIcon: "Dumbbell",
   },
   {
     title: "Outings & Community Trips",
     text: "Organized excursions to parks, cultural venues, local shops, and seasonal events that add variety and joy.",
-    icon: "M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z",
+    lucideIcon: "MapPinned",
   },
   {
     title: "Spiritual & Reflective Time",
     text: "Devotionals, quiet reflection spaces, and purpose-centered gatherings for residents who find meaning in spiritual practice.",
-    icon: "M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18",
+    lucideIcon: "Sparkles",
   },
   {
     title: "Companionship & Connection",
     text: "Conversation circles, game afternoons, buddy programs, and visiting volunteers so no resident feels isolated.",
-    icon: "M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z",
+    lucideIcon: "UsersRound",
   },
   {
     title: "Family Peace of Mind",
     text: "Transparent updates, responsive coordination, and honest guidance when needs evolve—families stay partners, not bystanders.",
-    icon: "M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z",
+    lucideIcon: "ShieldCheck",
   },
 ] as const;
 

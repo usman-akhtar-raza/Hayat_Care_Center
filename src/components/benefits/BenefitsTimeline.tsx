@@ -2,12 +2,26 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
+import {
+  type LucideIcon,
+  CalendarHeart,
+  ClipboardCheck,
+  HeartHandshake,
+  UtensilsCrossed,
+} from "lucide-react";
+
+const timelineIconMap: Record<string, LucideIcon> = {
+  UtensilsCrossed,
+  CalendarHeart,
+  HeartHandshake,
+  ClipboardCheck,
+};
 
 interface TimelineItem {
   stat: string;
   label: string;
   description: string;
-  icon: string;
+  lucideIcon: string;
   image: string;
 }
 
@@ -100,6 +114,7 @@ export default function BenefitsTimeline({ items }: BenefitsTimelineProps) {
         {items.map((item, index) => {
           const isEven = index % 2 === 0;
           const isActive = activeNodes[index];
+          const TimelineIcon = timelineIconMap[item.lucideIcon] ?? ClipboardCheck;
 
           return (
             <div
@@ -140,20 +155,7 @@ export default function BenefitsTimeline({ items }: BenefitsTimelineProps) {
                     </div>
                     <div className="p-5">
                       <div className="mb-2.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-amber-50 text-amber-800">
-                        <svg
-                          className="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d={item.icon}
-                          />
-                        </svg>
+                        <TimelineIcon className="h-4 w-4" strokeWidth={1.8} aria-hidden />
                       </div>
                       <p className="text-sm leading-relaxed text-slate-600">
                         {item.description}
@@ -175,22 +177,13 @@ export default function BenefitsTimeline({ items }: BenefitsTimelineProps) {
                       : "scale-75 border-slate-300 bg-slate-100"
                   }`}
                 >
-                  <svg
+                  <TimelineIcon
                     className={`h-5 w-5 transition-colors duration-500 ${
                       isActive ? "text-[var(--brand-gold)]" : "text-slate-400"
                     }`}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
+                    strokeWidth={2}
                     aria-hidden
-                  >
-                    <path
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d={item.icon}
-                    />
-                  </svg>
+                  />
                   {isActive && (
                     <span className="absolute inset-0 animate-[timelineNodePing_0.8s_cubic-bezier(0,0,0.2,1)_forwards] rounded-full border-2 border-[var(--brand-gold)] opacity-0" />
                   )}
@@ -231,20 +224,7 @@ export default function BenefitsTimeline({ items }: BenefitsTimelineProps) {
                     </div>
                     <div className="p-5">
                       <div className="mb-2.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-amber-50 text-amber-800">
-                        <svg
-                          className="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d={item.icon}
-                          />
-                        </svg>
+                        <TimelineIcon className="h-4 w-4" strokeWidth={1.8} aria-hidden />
                       </div>
                       <p className="text-sm leading-relaxed text-slate-600">
                         {item.description}
