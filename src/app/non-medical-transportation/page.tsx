@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MovingBusScene from "@/components/non-medical/MovingBusScene";
 import { homeVerticalsDeepDive, nonMedicalTransportationSummary } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -131,6 +132,29 @@ export default function NonMedicalTransportationPage() {
                 ))}
               </ul>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-slate-50/65 py-16 md:py-20">
+        <div className={shell}>
+          <div className={inner}>
+            <div className="mx-auto max-w-3xl text-center">
+              <p data-reveal className={sectionEyebrow}>
+                Ride visualization
+              </p>
+              <h2 data-reveal data-reveal-delay={40} className="mt-3 text-3xl font-semibold text-slate-900 md:text-4xl">
+                See how a day of transportation flows
+              </h2>
+              <p data-reveal data-reveal-delay={70} className="mt-4 text-slate-600">
+                This animation shows the typical route pattern from home pickup to appointment and center dropoff, matching
+                how our non medical transportation is scheduled.
+              </p>
+            </div>
+
+            <div className="mt-10" data-reveal data-reveal-delay={100}>
+              <MovingBusScene />
+            </div>
           </div>
         </div>
       </section>

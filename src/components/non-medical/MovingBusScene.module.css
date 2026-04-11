@@ -1,0 +1,304 @@
+.scene {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(120% 80% at 20% 12%, rgba(213, 102, 75, 0.2), transparent 52%),
+    radial-gradient(90% 65% at 82% 10%, rgba(10, 74, 143, 0.22), transparent 55%),
+    linear-gradient(180deg, #f8fcff 0%, #eef5fd 52%, #e8eef8 100%);
+}
+
+.route {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: 34%;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(7, 61, 122, 0.2), rgba(7, 61, 122, 0.55), rgba(7, 61, 122, 0.2));
+}
+
+.stop {
+  position: absolute;
+  top: calc(34% - 12px);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.stopPin {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #d5664b;
+  border: 2px solid #fff6db;
+  box-shadow: 0 0 0 1px rgba(213, 102, 75, 0.55);
+}
+
+.stopPin::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(213, 102, 75, 0.5);
+  animation: stopPulse 2.6s ease-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.stopLabel {
+  min-width: 118px;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(7, 61, 122, 0.2);
+  background: rgba(255, 255, 255, 0.86);
+  padding: 0.45rem 0.55rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #073d7a;
+}
+
+.cityBand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 94px;
+  height: 66px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(7, 61, 122, 0.14) 0 16px,
+      rgba(7, 61, 122, 0.04) 16px 34px,
+      rgba(7, 61, 122, 0.2) 34px 46px,
+      rgba(7, 61, 122, 0.06) 46px 66px
+    );
+  clip-path: polygon(0 100%, 0 35%, 7% 22%, 12% 42%, 18% 18%, 24% 46%, 31% 20%, 39% 40%, 46% 14%, 56% 42%, 63% 26%, 72% 44%, 82% 18%, 92% 36%, 100% 26%, 100% 100%);
+  opacity: 0.55;
+}
+
+.road {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 95px;
+  background: linear-gradient(180deg, #53667d 0%, #37485c 100%);
+  box-shadow: inset 0 8px 14px rgba(0, 0, 0, 0.18);
+}
+
+.lane {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 46%;
+  height: 5px;
+  background: repeating-linear-gradient(90deg, #ffe39a 0 34px, transparent 34px 56px);
+  animation: laneMove 0.9s linear infinite;
+  opacity: 0.9;
+}
+
+.busWrap {
+  position: absolute;
+  left: -24%;
+  bottom: 42px;
+  z-index: 6;
+  animation: busDrive 12s cubic-bezier(0.3, 0, 0.17, 1) infinite;
+}
+
+.busShadow {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: -7px;
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.3);
+  filter: blur(5px);
+}
+
+.bus {
+  position: relative;
+  width: 176px;
+  height: 68px;
+  border-radius: 16px 16px 12px 12px;
+  border: 2px solid rgba(7, 61, 122, 0.7);
+  background: linear-gradient(180deg, #fefefe 0%, #f0f6ff 58%, #e2edf9 100%);
+  box-shadow: 0 8px 16px -8px rgba(7, 61, 122, 0.45);
+}
+
+.busAccent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 8px;
+  height: 13px;
+  background: linear-gradient(90deg, #073d7a 0%, #0a4a8f 56%, #d5664b 100%);
+}
+
+.windowRow {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.window {
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(7, 61, 122, 0.3);
+  background: linear-gradient(180deg, #d6ecff 0%, #b6d7f2 100%);
+}
+
+.wheel {
+  position: absolute;
+  bottom: -10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 4px solid #1f2b38;
+  background: #a9b9cd;
+  animation: wheelSpin 0.8s linear infinite;
+}
+
+.wheel::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 999px;
+  background: #4a5d72;
+}
+
+.wheelFront {
+  left: 24px;
+}
+
+.wheelRear {
+  right: 24px;
+}
+
+.busText {
+  position: absolute;
+  right: 10px;
+  top: 47px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #073d7a;
+}
+
+@keyframes laneMove {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -56px;
+  }
+}
+
+@keyframes busDrive {
+  0% {
+    left: -24%;
+    transform: translateY(0);
+  }
+  17% {
+    left: 13%;
+    transform: translateY(-2px);
+  }
+  23% {
+    left: 13%;
+    transform: translateY(-1px);
+  }
+  45% {
+    left: 45%;
+    transform: translateY(0);
+  }
+  52% {
+    left: 45%;
+    transform: translateY(-1px);
+  }
+  74% {
+    left: 74%;
+    transform: translateY(0);
+  }
+  81% {
+    left: 74%;
+    transform: translateY(-1px);
+  }
+  100% {
+    left: 112%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wheelSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes stopPulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .scene {
+    min-height: 300px;
+  }
+
+  .cityBand {
+    height: 56px;
+    bottom: 86px;
+  }
+
+  .road {
+    height: 88px;
+  }
+
+  .bus {
+    width: 148px;
+    height: 60px;
+  }
+
+  .windowRow {
+    top: 22px;
+  }
+
+  .window {
+    height: 15px;
+  }
+
+  .busText {
+    font-size: 8px;
+    top: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lane,
+  .busWrap,
+  .wheel,
+  .stopPin::after {
+    animation: none;
+  }
+
+  .busWrap {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
