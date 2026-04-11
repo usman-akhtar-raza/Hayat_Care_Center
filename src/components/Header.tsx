@@ -212,8 +212,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const openItem = openIndex !== null ? navItems[openIndex] : null;
-
   /** At top of homepage only: sit on the hero with no bar; after scroll → glass. */
   const heroOverlayNav = pathname === "/" && !scrolled && !mobileOpen;
 
@@ -308,6 +306,7 @@ export default function Header() {
                         }`}
                         aria-expanded={openIndex === index}
                         aria-haspopup="true"
+                        aria-controls={`desktop-nav-dropdown-${index}`}
                         onMouseEnter={() => openDropdown(index)}
                         onFocus={() => openDropdown(index)}
                       >
@@ -316,35 +315,35 @@ export default function Header() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                       </button>
+                      {openIndex === index && (
+                        <div
+                          id={`desktop-nav-dropdown-${index}`}
+                          className="dropdown-panel absolute left-0 top-full z-50 mt-2 w-[min(22rem,calc(100vw-2rem))] translate-x-1 rounded-2xl border border-slate-200/90 bg-white/95 p-2 shadow-xl shadow-black/20 backdrop-blur-md"
+                          role="group"
+                          aria-label={`${item.label} links`}
+                          onMouseEnter={clearCloseTimer}
+                        >
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className="group block rounded-xl px-4 py-3 transition-colors hover:bg-[#D5664B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#073D7A]"
+                              onClick={() => setOpenIndex(null)}
+                            >
+                              <span className="block text-sm font-semibold text-black transition-colors group-hover:text-white">
+                                {child.label}
+                              </span>
+                              <span className="mt-0.5 block text-xs leading-5 text-slate-600 transition-colors group-hover:text-white/90">
+                                {child.description}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </li>
                   );
                 })}
               </ul>
-
-              {openItem?.children && (
-                <div
-                  className="dropdown-panel absolute left-1/2 top-full z-50 mt-2 w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 rounded-2xl border border-slate-200/90 bg-white/95 p-2 shadow-xl shadow-black/20 backdrop-blur-md"
-                  role="group"
-                  aria-label={`${openItem.label} links`}
-                  onMouseEnter={clearCloseTimer}
-                >
-                  {openItem.children.map((child) => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      className="group block rounded-xl px-4 py-3 transition-colors hover:bg-[#D5664B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#073D7A]"
-                      onClick={() => setOpenIndex(null)}
-                    >
-                      <span className="block text-sm font-semibold text-black transition-colors group-hover:text-white">
-                        {child.label}
-                      </span>
-                      <span className="mt-0.5 block text-xs leading-5 text-slate-600 transition-colors group-hover:text-white/90">
-                        {child.description}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              )}
             </div>
 
             <div className="flex items-center justify-end gap-2 sm:gap-3 lg:justify-self-end">
