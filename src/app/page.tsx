@@ -24,22 +24,22 @@ const photoNonMedicalTransport = "/images/transport/non-medical-bus.jpg";
 
 const galleryStrip = [
   {
-    src: "/images/seniors/senior-care-center-02.jpg",
-    alt: "Senior participant receiving a warm welcome at the care center",
-    title: "Warm daily welcome",
-    subtitle: "A calm and respectful start to every visit.",
+    src: "/images/new/1.png",
+    alt: "Welcoming reception area",
+    title: "Welcoming reception",
+    subtitle: "A calm, professional space for every arrival.",
   },
   {
-    src: "/images/seniors/senior-activity-01.jpg",
-    alt: "Older adults participating in social daytime activities",
-    title: "Purposeful activity",
-    subtitle: "Engagement and connection throughout the day.",
+    src: "/images/new/2.png",
+    alt: "Residents enjoying dining together",
+    title: "Shared dining",
+    subtitle: "Nutritious meals and community at the table.",
   },
   {
-    src: "/images/seniors/senior-home-care-01.jpg",
-    alt: "Caregiver assisting an older adult during a home care visit",
-    title: "Compassionate home support",
-    subtitle: "Personalized care that keeps routines steady.",
+    src: "/images/new/3.png",
+    alt: "Caregiver supporting a client with compassion",
+    title: "Compassionate care",
+    subtitle: "Respectful support, every day.",
   },
 ] as const;
 
