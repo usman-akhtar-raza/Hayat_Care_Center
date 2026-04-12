@@ -268,7 +268,7 @@ export default function HeroSection() {
     >
       <motion.div className="absolute inset-0" style={{ y: imageY }}>
         <Image
-          src="/images/seniors/senior-care-center-02.jpg"
+          src="/images/new/4.png"
           alt=""
           fill
           priority
