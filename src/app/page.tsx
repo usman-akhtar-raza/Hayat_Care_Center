@@ -1,6 +1,7 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
 import HeroSection from "@/components/home/HeroSection";
+import ServicesRotatingGrid from "@/components/home/ServicesRotatingGrid";
 import VerticalShowcaseCards from "@/components/home/VerticalShowcaseCards";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import {
@@ -349,24 +350,7 @@ export default function Home() {
               Center-based days or visits at home—delivered with clear communication and respect for your routine.
             </p>
           </div>
-          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <article
-                key={service.title}
-                data-reveal
-                data-reveal-delay={index * 50}
-                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md"
-              >
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50 text-amber-800">
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
-                    <path strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" d={service.icon} />
-                  </svg>
-                </div>
-                <h3 className="mt-3 text-base font-bold text-slate-900">{service.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{service.description}</p>
-              </article>
-            ))}
-          </div>
+          <ServicesRotatingGrid services={services} />
           </div>
         </div>
       </section>
