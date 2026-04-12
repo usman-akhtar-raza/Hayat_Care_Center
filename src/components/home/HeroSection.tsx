@@ -10,16 +10,19 @@ import { contactDetails } from "@/data/siteContent";
 const services = [
   {
     text: "Adult day program",
+    description: "Structured daytime care with social engagement and support.",
     image: "/images/seniors/vitaly-gariev-BUNNEclz-yQ-unsplash.jpg",
     imageAlt: "Hayat adult day program in Colorado — welcoming community daytime care",
   },
   {
     text: "Home care agency",
+    description: "Personalized in home assistance built around daily routines.",
     image: "/images/seniors/age-cymru-2obyM4zYt3Y-unsplash.jpg",
     imageAlt: "Hayat home care agency in Colorado — trusted in-home support",
   },
   {
     text: "Non-medical transportation",
+    description: "Reliable rides for appointments errands and community visits.",
     image: "/images/transport/medical-transportation.jpg",
     imageAlt: "Hayat non-medical transportation service in Colorado — safe, reliable rides",
   },
@@ -29,7 +32,7 @@ function getCardStyle(cardIndex: number, currentIndex: number) {
   const n = services.length;
   const relativeIndex = (cardIndex - currentIndex + n) % n;
 
-  /* Coverflow: same card size for all; center = focus, sides sit behind (smaller scale + Z + mild Y rotation). */
+  /* Reference-style 3D rotation: front card plus two side cards with depth and fade. */
   switch (relativeIndex) {
     case 0:
       return {
@@ -42,30 +45,30 @@ function getCardStyle(cardIndex: number, currentIndex: number) {
       };
     case 1:
       return {
-        x: 92,
-        y: 4,
-        z: -240,
-        scale: 0.9,
-        rotateY: -12,
-        zIndex: 11,
+        x: 146,
+        y: 18,
+        z: -180,
+        scale: 0.76,
+        rotateY: -32,
+        zIndex: 20,
       };
     case 2:
       return {
-        x: -92,
-        y: 4,
-        z: -240,
-        scale: 0.9,
-        rotateY: 12,
-        zIndex: 10,
+        x: -146,
+        y: 18,
+        z: -180,
+        scale: 0.76,
+        rotateY: 32,
+        zIndex: 20,
       };
     default:
       return {
         x: 0,
-        y: 0,
-        z: 0,
-        scale: 1,
+        y: 28,
+        z: -250,
+        scale: 0.62,
         rotateY: 0,
-        zIndex: 30,
+        zIndex: 10,
       };
   }
 }
@@ -73,14 +76,14 @@ function getCardStyle(cardIndex: number, currentIndex: number) {
 function RotatingCards({ currentIndex }: { currentIndex: number }) {
   const n = services.length;
 
-  /** One footprint for every card — only scale/depth changes for side vs center (carousel / cover flow). */
+  /** Shared card footprint. Motion comes from 3D transform values above. */
   const cardFrame =
-    "relative h-[min(44vh,360px)] w-[min(78vw,272px)] overflow-hidden rounded-[1.35rem] sm:h-[400px] sm:w-[278px] lg:h-[min(48vh,428px)] lg:w-[292px] sm:rounded-[1.65rem]";
+    "relative h-[300px] w-[240px] overflow-hidden rounded-xl sm:h-[340px] sm:w-[260px] lg:h-[400px] lg:w-[300px]";
 
   return (
     <div
-      className="relative mx-auto h-[min(54vh,460px)] w-full min-w-[320px] max-w-[540px] lg:h-[min(58vh,540px)] lg:max-w-[580px]"
-      style={{ perspective: "1900px" }}
+      className="relative mx-auto h-[350px] w-full min-w-[320px] max-w-[560px] lg:h-[450px] lg:max-w-[620px]"
+      style={{ perspective: "1200px" }}
     >
       <div
         className="pointer-events-none absolute left-1/2 top-[40%] h-[min(88%,400px)] w-[min(125%,520px)] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[#D5664B]/[0.12] blur-[44px]"
@@ -110,8 +113,8 @@ function RotatingCards({ currentIndex }: { currentIndex: number }) {
                 rotateY: style.rotateY,
               }}
               transition={{
-                duration: 0.82,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.8,
+                ease: [0.25, 0.46, 0.45, 0.94],
               }}
               style={{
                 zIndex: style.zIndex,
@@ -125,9 +128,7 @@ function RotatingCards({ currentIndex }: { currentIndex: number }) {
                     : "shadow-[0_18px_40px_-22px_rgba(0,0,0,0.6)]"
                 }`}
               >
-                <div
-                  className={`absolute inset-0 ${isFront ? "" : "brightness-[0.93] saturate-[0.96]"}`}
-                >
+                <div className="absolute inset-0">
                   <Image
                     src={service.image}
                     alt={isFront ? service.imageAlt : ""}
@@ -136,24 +137,26 @@ function RotatingCards({ currentIndex }: { currentIndex: number }) {
                     sizes="(max-width: 1024px) 292px, 300px"
                     priority={index === 0}
                   />
-                  {/* Bottom-only scrim: full photo visible on top, no dark gradient over the sky/ceiling */}
-                  <div
-                    className="pointer-events-none absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-black/88 via-black/32 to-transparent"
-                    aria-hidden
-                  />
+                  {!isFront ? (
+                    <>
+                      <div className="pointer-events-none absolute inset-0 bg-[#021022]/18" aria-hidden />
+                      <div
+                        className="pointer-events-none absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-[#021022]/72 via-[#073D7A]/28 to-transparent"
+                        aria-hidden
+                      />
+                    </>
+                  ) : null}
                 </div>
 
                 <div
-                  className="pointer-events-none absolute inset-0 rounded-[1.35rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] ring-1 ring-inset ring-white/10 sm:rounded-[1.65rem]"
+                  className="pointer-events-none absolute inset-0 rounded-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] ring-1 ring-inset ring-white/10"
                   aria-hidden
                 />
 
                 <div className="absolute inset-x-0 bottom-0 z-20 p-2.5 sm:p-3">
                   <div
                     className={`rounded-xl border backdrop-blur-md sm:rounded-2xl ${
-                      isFront
-                        ? "border-white/25 bg-black/40"
-                        : "border-white/15 bg-black/50"
+                      isFront ? "border-white/25 bg-black/40" : "border-white/15 bg-black/50"
                     }`}
                   >
                     {isFront ? (
@@ -163,16 +166,15 @@ function RotatingCards({ currentIndex }: { currentIndex: number }) {
                       />
                     ) : null}
                     <div className="px-3 py-2 sm:px-3.5 sm:py-2.5">
-                      <p
-                        className={`text-[9px] font-semibold uppercase tracking-[0.26em] sm:text-[10px] ${
-                          isFront ? "text-white/70" : "text-white/60"
-                        }`}
-                      >
-                        Hayat · Colorado
+                      <p className={`text-[9px] font-semibold uppercase tracking-[0.26em] sm:text-[10px] ${isFront ? "text-white/70" : "text-white/60"}`}>
+                        Hayat Colorado
                       </p>
-                      <h3 className="mt-0.5 text-[0.88rem] font-semibold leading-snug tracking-tight text-white text-balance sm:text-[1rem] lg:text-[1.05rem]">
+                      <h3 className="mt-0.5 text-[0.9rem] font-bold tracking-tight text-white [text-shadow:0_3px_12px_rgba(0,0,0,0.95)] sm:text-[1rem] lg:text-[1.05rem]">
                         {service.text}
                       </h3>
+                      <p className={`mt-1 line-clamp-2 text-[0.72rem] leading-snug sm:text-[0.76rem] ${isFront ? "text-white/88" : "text-white/76"}`}>
+                        {service.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -275,12 +277,12 @@ export default function HeroSection() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#073D7A]/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#073D7A]/68 via-[#073D7A]/78 to-[#021022]/88" />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 80% 55% at 20% 35%, rgba(213,102,75,0.18) 0%, transparent 55%)",
+              "radial-gradient(ellipse 80% 55% at 20% 35%, rgba(213,102,75,0.12) 0%, transparent 55%)",
           }}
         />
       </motion.div>
