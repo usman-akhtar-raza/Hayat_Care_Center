@@ -17,8 +17,7 @@ const journeySteps: JourneyStep[] = [
     title: "Morning arrival and check in",
     detail:
       "Each participant is welcomed and checked in with a short status review so the day starts calmly and safely.",
-    image:
-      "https://images.unsplash.com/photo-1773227055656-ec329ce9adac?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/seniors/senior-care-center-02.jpg",
     imageAlt: "Older adults seated in a warm community room at the start of the day",
     rightTitle: "Arrival sets the tone for the day",
     rightDetail:
@@ -28,8 +27,7 @@ const journeySteps: JourneyStep[] = [
     title: "Programs and purposeful activity",
     detail:
       "Movement social interaction and structured activities are paced to ability so participants stay engaged without overload.",
-    image:
-      "https://images.unsplash.com/photo-1765896387398-1e1ae8d2eb85?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/seniors/senior-activity-01.jpg",
     imageAlt: "Two seniors talking and connecting during daytime activity hours",
     rightTitle: "Engagement with structure not pressure",
     rightDetail:
@@ -39,8 +37,7 @@ const journeySteps: JourneyStep[] = [
     title: "Meals hydration and rest",
     detail:
       "Nutrition hydration and quiet breaks are built in to keep energy stable and reduce fatigue through the day.",
-    image:
-      "https://images.unsplash.com/photo-1773227060313-7623fd5bfa64?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/seniors/senior-comfort-01.jpg",
     imageAlt: "Senior care participant in a calm indoor care environment",
     rightTitle: "Balanced energy through the afternoon",
     rightDetail:
@@ -50,8 +47,7 @@ const journeySteps: JourneyStep[] = [
     title: "Family handoff and updates",
     detail:
       "Pickup includes a clear handoff summary so families know what went well and where follow up may be needed.",
-    image:
-      "https://images.unsplash.com/photo-1773227055624-07b515ba87c5?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/seniors/senior-mobility-support-01.jpg",
     imageAlt: "Caregiver supporting an elderly participant with mobility at handoff time",
     rightTitle: "Clear handoff before pickup",
     rightDetail:

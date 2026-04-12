@@ -18,30 +18,27 @@ import {
   trustPoints,
 } from "@/data/siteContent";
 
-const photoAdultCare = encodeURI("/WhatsApp Image 2026-04-10 at 16.29.44 (1).jpeg");
-
-/** Non-medical transportation — Unsplash (transit / mobility) */
-const photoNonMedicalTransport =
-  "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80";
+const photoAdultCare = "/images/seniors/senior-care-center-01.jpg";
+const photoNonMedicalTransport = "/images/transport/non-medical-bus.jpg";
 
 const galleryStrip = [
   {
-    src: "/images/new/1.png",
-    alt: "Welcoming reception area",
-    title: "Welcoming reception",
-    subtitle: "A calm, professional space for every arrival.",
+    src: "/images/seniors/senior-care-center-02.jpg",
+    alt: "Senior participant receiving a warm welcome at the care center",
+    title: "Warm daily welcome",
+    subtitle: "A calm and respectful start to every visit.",
   },
   {
-    src: "/images/new/2.png",
-    alt: "Residents enjoying dining together",
-    title: "Shared dining",
-    subtitle: "Nutritious meals and community at the table.",
+    src: "/images/seniors/senior-activity-01.jpg",
+    alt: "Older adults participating in social daytime activities",
+    title: "Purposeful activity",
+    subtitle: "Engagement and connection throughout the day.",
   },
   {
-    src: "/images/new/3.png",
-    alt: "Caregiver supporting a client with compassion",
-    title: "Compassionate care",
-    subtitle: "Respectful support, every day.",
+    src: "/images/seniors/senior-home-care-01.jpg",
+    alt: "Caregiver assisting an older adult during a home care visit",
+    title: "Compassionate home support",
+    subtitle: "Personalized care that keeps routines steady.",
   },
 ] as const;
 
@@ -152,7 +149,7 @@ export default function Home() {
                   tagline: homeVerticalsDeepDive.adult.tagline,
                   description: homeVerticalsDeepDive.adult.fitFor,
                   href: "/#adult-day-center",
-                  imageSrc: "/images/usedimages/3.png",
+                  imageSrc: "/images/seniors/senior-care-center-01.jpg",
                   imageAlt: "Adult care center at Hayat",
                 },
                 {
@@ -161,7 +158,7 @@ export default function Home() {
                   tagline: homeVerticalsDeepDive.home.tagline,
                   description: homeVerticalsDeepDive.home.fitFor,
                   href: "/#home-care-agency",
-                  imageSrc: "/images/usedimages/4.png",
+                  imageSrc: "/images/seniors/senior-home-care-01.jpg",
                   imageAlt: "Home care support at Hayat",
                 },
                 {
@@ -240,7 +237,7 @@ export default function Home() {
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {homeQuickLinks.map((item, index) => (
               <Link
-                key={item.title}
+                key={item.href}
                 href={item.href}
                 data-reveal
                 data-reveal-delay={60 + index * 40}
@@ -259,7 +256,7 @@ export default function Home() {
           <div className={`${homeInner} grid items-center gap-12 md:grid-cols-2 md:gap-14`}>
           <div data-reveal className="relative order-2 aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md md:order-1">
             <Image
-              src="/images/usedimages/1.png"
+              src="/images/seniors/senior-home-care-01.jpg"
               alt="Home care support"
               fill
               className="object-cover"

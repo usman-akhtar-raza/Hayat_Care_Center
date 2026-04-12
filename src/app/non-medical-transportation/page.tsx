@@ -53,8 +53,7 @@ const relatedPaths = [
   },
 ] as const;
 
-const transportHeroImage =
-  "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80";
+const transportHeroImage = "/images/transport/non-medical-bus.jpg";
 
 export default function NonMedicalTransportationPage() {
   return (

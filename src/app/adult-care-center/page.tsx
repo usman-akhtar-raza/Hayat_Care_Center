@@ -61,7 +61,7 @@ export default function AdultCareCenterPage() {
               className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md"
             >
               <Image
-                src="/images/usedimages/3.png"
+                src="/images/seniors/senior-care-center-01.jpg"
                 alt="Adult care center participants in a welcoming daytime setting"
                 fill
                 className="object-cover"

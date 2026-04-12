@@ -10,17 +10,17 @@ import { contactDetails } from "@/data/siteContent";
 const services = [
   {
     text: "Adult day program",
-    image: "/images/new/1.png",
+    image: "/images/seniors/senior-care-center-01.jpg",
     imageAlt: "Hayat adult day program in Colorado — welcoming community daytime care",
   },
   {
     text: "Home care agency",
-    image: "/images/new/2.png",
+    image: "/images/seniors/senior-home-care-01.jpg",
     imageAlt: "Hayat home care agency in Colorado — trusted in-home support",
   },
   {
     text: "Non-medical transportation",
-    image: "/images/new/3.png",
+    image: "/images/transport/non-medical-bus.jpg",
     imageAlt: "Hayat non-medical transportation service in Colorado — safe, reliable rides",
   },
 ] as const;
@@ -207,8 +207,6 @@ function Typewriter({ onWordChange }: { onWordChange: (index: number) => void })
   const [wordIndex, setWordIndex] = useState(0);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const onWordChangeRef = useRef(onWordChange);
-  onWordChangeRef.current = onWordChange;
 
   useEffect(() => {
     const word = services[wordIndex].text;
@@ -226,14 +224,14 @@ function Typewriter({ onWordChange }: { onWordChange: (index: number) => void })
           setIsDeleting(false);
           const nextIndex = (wordIndex + 1) % services.length;
           setWordIndex(nextIndex);
-          onWordChangeRef.current(nextIndex);
+          onWordChange(nextIndex);
         }
       },
       isDeleting ? 40 : 80,
     );
 
     return () => window.clearTimeout(timeout);
-  }, [text, isDeleting, wordIndex]);
+  }, [text, isDeleting, wordIndex, onWordChange]);
 
   return (
     <span className="inline-block">
@@ -270,7 +268,7 @@ export default function HeroSection() {
     >
       <motion.div className="absolute inset-0" style={{ y: imageY }}>
         <Image
-          src="/images/new/4.png"
+          src="/images/seniors/senior-care-center-02.jpg"
           alt=""
           fill
           priority
