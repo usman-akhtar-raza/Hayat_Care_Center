@@ -19,7 +19,6 @@ import {
 } from "@/data/siteContent";
 
 const photoAdultCare = encodeURI("/WhatsApp Image 2026-04-10 at 16.29.44 (1).jpeg");
-const photoHomeCare = encodeURI("/WhatsApp Image 2026-04-10 at 16.29.45.jpeg");
 
 /** Non-medical transportation — Unsplash (transit / mobility) */
 const photoNonMedicalTransport =
@@ -65,10 +64,10 @@ export default function Home() {
   const faqPreview = faqs.slice(0, 4);
 
   return (
-    <div className="bg-[#ffffff]">
+    <div className="home-theme-page">
       <HeroSection />
 
-      <section className="border-b border-slate-200 bg-white py-10 md:py-12">
+      <section className="home-surface-soft border-b border-slate-200 py-10 md:py-12">
         <div className={homeShell}>
           <div className={`${homeInner} grid gap-3 sm:grid-cols-2 lg:grid-cols-4`}>
             {communityStats.map((stat) => (
@@ -85,7 +84,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="adult-day-center" className="scroll-mt-24 border-b border-slate-200 bg-white py-16 md:py-20">
+      <section id="adult-day-center" className="home-surface-warm scroll-mt-24 border-b border-slate-200 py-16 md:py-20">
         <div className={homeShell}>
           <div className={`${homeInner} grid items-center gap-12 md:grid-cols-2 md:gap-14`}>
           <div data-reveal>
@@ -125,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* Deep dive: three verticals */}
-      <section id="our-verticals" className="scroll-mt-24 border-b border-slate-200 bg-gradient-to-b from-slate-50/90 to-white py-16 md:py-24">
+      <section id="our-verticals" className="home-surface-feature scroll-mt-24 border-b border-slate-200 py-16 md:py-24">
         <div className={homeShell}>
           <div className={homeInner}>
           <div className={sectionIntro}>
@@ -183,7 +182,7 @@ export default function Home() {
       </section>
 
       {/* Branches / locations */}
-      <section className="border-b border-slate-200 bg-slate-50/70 py-16 md:py-20">
+      <section className="home-surface-cool border-b border-slate-200 py-16 md:py-20">
         <div className={homeShell}>
           <div className={homeInner}>
           <div className={sectionIntro}>
@@ -223,7 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white py-14 md:py-16">
+      <section className="home-surface-soft border-b border-slate-200 py-14 md:py-16">
         <div className={homeShell}>
           <div className={homeInner}>
           <div className={sectionIntro}>
@@ -255,7 +254,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="home-care-agency" className="scroll-mt-24 border-b border-slate-200 bg-slate-50/70 py-16 md:py-20">
+      <section id="home-care-agency" className="home-surface-cool scroll-mt-24 border-b border-slate-200 py-16 md:py-20">
         <div className={homeShell}>
           <div className={`${homeInner} grid items-center gap-12 md:grid-cols-2 md:gap-14`}>
           <div data-reveal className="relative order-2 aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md md:order-1">
@@ -294,7 +293,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="non-medical-transportation" className="scroll-mt-24 border-b border-slate-200 bg-white py-16 md:py-20">
+      <section id="non-medical-transportation" className="home-surface-warm scroll-mt-24 border-b border-slate-200 py-16 md:py-20">
         <div className={homeShell}>
           <div className={`${homeInner} grid items-center gap-12 md:grid-cols-2 md:gap-14`}>
             <div data-reveal data-reveal-delay={80}>
@@ -333,7 +332,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-50/50 py-16 md:py-20">
+      <section className="home-surface-cool border-b border-slate-200 py-16 md:py-20">
         <div className={homeShell}>
           <div className={homeInner}>
           <div className={sectionIntro}>
@@ -375,7 +374,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white py-14 md:py-16">
+      <section className="home-surface-soft border-b border-slate-200 py-14 md:py-16">
         <div className={homeShell}>
           <div className={homeInner}>
           <div className={sectionIntro}>
@@ -408,7 +407,7 @@ export default function Home() {
       </section>
 
       {/* Journey / steps */}
-      <section className="border-b border-slate-200 bg-slate-50/70 py-16 md:py-20">
+      <section className="home-surface-feature border-b border-slate-200 py-16 md:py-20">
         <div className={homeShell}>
           <div className={homeInner}>
           <div className={sectionIntro}>
@@ -449,7 +448,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white py-12 md:py-16">
+      <section className="home-surface-warm border-b border-slate-200 py-12 md:py-16">
         <div className={homeShell}>
           <div className={homeInner}>
           <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-3 md:gap-8 lg:gap-10">
@@ -488,7 +487,7 @@ export default function Home() {
       </section>
 
       {/* Long testimonials */}
-      <section className="border-b border-slate-200 bg-slate-50/80 py-16 md:py-24">
+      <section className="home-surface-feature border-b border-slate-200 py-16 md:py-24">
         <div className={homeShell}>
           <div className={homeInner}>
           <div className={sectionIntro}>
@@ -555,7 +554,7 @@ export default function Home() {
       </section>
 
       {/* FAQ preview */}
-      <section className="border-b border-slate-200 bg-white py-16 md:py-20">
+      <section className="home-surface-soft border-b border-slate-200 py-16 md:py-20">
         <div className={homeShell}>
           <div className="mx-auto w-full max-w-3xl">
           <div className={sectionIntro}>
@@ -595,7 +594,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-white py-14 md:py-16">
+      <section className="home-surface-warm border-t border-slate-200 py-14 md:py-16">
         <div className={homeShell}>
           <div className={homeInner}>
           <div className={sectionIntro}>

@@ -218,6 +218,38 @@ h6 {
   opacity: 1;
 }
 
+.home-theme-page {
+  background:
+    radial-gradient(125% 72% at 8% -12%, rgba(7, 61, 122, 0.1), transparent 56%),
+    radial-gradient(105% 78% at 94% 2%, rgba(212, 102, 75, 0.12), transparent 58%),
+    linear-gradient(180deg, #ffffff 0%, #f7e3cd 32%, #f7fbff 66%, #f4ab777f 100%);
+}
+
+.home-surface-soft {
+  background:
+    radial-gradient(140% 100% at 0% 0%, rgba(7, 61, 122, 0.06), transparent 54%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 252, 255, 0.92) 100%);
+}
+
+.home-surface-warm {
+  background:
+    radial-gradient(120% 95% at 98% 0%, rgba(212, 102, 75, 0.11), transparent 52%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 249, 238, 0.94) 100%);
+}
+
+.home-surface-cool {
+  background:
+    radial-gradient(130% 95% at 2% 0%, rgba(7, 61, 122, 0.11), transparent 56%),
+    linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(255, 255, 255, 0.94) 100%);
+}
+
+.home-surface-feature {
+  background:
+    radial-gradient(85% 62% at 12% -8%, rgba(212, 102, 75, 0.12), transparent 58%),
+    radial-gradient(92% 66% at 88% 0%, rgba(7, 61, 122, 0.12), transparent 58%),
+    linear-gradient(180deg, rgba(249, 251, 255, 0.94) 0%, rgba(255, 249, 239, 0.95) 100%);
+}
+
 .glass {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
