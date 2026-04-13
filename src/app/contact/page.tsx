@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import ContactForm from "@/components/contact/ContactForm";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import { contactDetails } from "@/data/siteContent";
 
@@ -94,115 +95,9 @@ export default function ContactPage() {
             </div>
           </aside>
 
-          <form
-            data-reveal
-            data-reveal-delay={120}
-            className="relative overflow-hidden rounded-[2rem] border border-[#dcc690]/55 bg-white p-6 shadow-[0_22px_54px_-24px_rgba(7,61,122,0.4)] md:p-8 lg:p-9"
-          >
-            <div className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-gradient-to-r from-[#ffe7a6] via-[#D5664B] to-[#0a4a8f]" />
-
-            <div className="flex flex-wrap items-center gap-2.5">
-              <span className="rounded-full border border-[#f2d38b] bg-[#fff9e8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9b6d14]">
-                Tour planning
-              </span>
-              <span className="rounded-full border border-[#d9e5f5] bg-[#f5f9ff] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#265f98]">
-                Home care consult
-              </span>
-            </div>
-
-            <h3 className="mt-4 text-3xl font-bold leading-tight text-[var(--ink)]">Request A Callback</h3>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--ink-soft)]">
-              Tell us where you are in the decision process and we will respond with a focused plan for your next step.
-            </p>
-
-            <div className="mt-7 grid gap-4 sm:grid-cols-2">
-              <label htmlFor="contact-name" className="text-sm font-semibold text-[var(--ink)]">
-                Full Name
-                <input
-                  id="contact-name"
-                  type="text"
-                  className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3.5 py-3 text-sm text-slate-900 outline-none transition focus:border-[#D5664B] focus:bg-white focus:ring-2 focus:ring-[#ffd976]"
-                  placeholder="Your full name"
-                />
-              </label>
-
-              <label htmlFor="contact-phone" className="text-sm font-semibold text-[var(--ink)]">
-                Phone
-                <input
-                  id="contact-phone"
-                  type="tel"
-                  className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3.5 py-3 text-sm text-slate-900 outline-none transition focus:border-[#D5664B] focus:bg-white focus:ring-2 focus:ring-[#ffd976]"
-                  placeholder={contactDetails.phoneLabel}
-                />
-              </label>
-
-              <label htmlFor="contact-email" className="text-sm font-semibold text-[var(--ink)] sm:col-span-2">
-                Email
-                <input
-                  id="contact-email"
-                  type="email"
-                  className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3.5 py-3 text-sm text-slate-900 outline-none transition focus:border-[#D5664B] focus:bg-white focus:ring-2 focus:ring-[#ffd976]"
-                  placeholder="you@example.com"
-                />
-              </label>
-
-              <label htmlFor="contact-service" className="text-sm font-semibold text-[var(--ink)]">
-                Service Interest
-                <select
-                  id="contact-service"
-                  className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3.5 py-3 text-sm text-slate-900 outline-none transition focus:border-[#D5664B] focus:bg-white focus:ring-2 focus:ring-[#ffd976]"
-                  defaultValue=""
-                >
-                  <option value="" disabled>
-                    Select one
-                  </option>
-                  <option>Adult care center</option>
-                  <option>Home care agency</option>
-                  <option>Non-medical transportation</option>
-                  <option>Not sure yet</option>
-                </select>
-              </label>
-
-              <label htmlFor="contact-time" className="text-sm font-semibold text-[var(--ink)]">
-                Preferred Callback Time
-                <select
-                  id="contact-time"
-                  className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3.5 py-3 text-sm text-slate-900 outline-none transition focus:border-[#D5664B] focus:bg-white focus:ring-2 focus:ring-[#ffd976]"
-                  defaultValue=""
-                >
-                  <option value="" disabled>
-                    Select a window
-                  </option>
-                  <option>Morning 9 AM to 12 PM</option>
-                  <option>Afternoon 12 PM to 4 PM</option>
-                  <option>Evening 4 PM to 6 PM</option>
-                </select>
-              </label>
-
-              <label htmlFor="contact-message" className="text-sm font-semibold text-[var(--ink)] sm:col-span-2">
-                What Are You Looking For
-                <textarea
-                  id="contact-message"
-                  rows={4}
-                  className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3.5 py-3 text-sm text-slate-900 outline-none transition focus:border-[#D5664B] focus:bg-white focus:ring-2 focus:ring-[#ffd976]"
-                  placeholder="Tell us about care needs timing preferred floor plan or tour questions"
-                />
-              </label>
-            </div>
-
-            <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-              <label className="flex items-start gap-2 text-xs leading-5 text-[var(--ink-soft)]">
-                <input type="checkbox" className="mt-0.5 h-4 w-4 rounded border-slate-300 accent-[#D5664B]" />
-                <span>I agree to be contacted by phone or email about care options and scheduling.</span>
-              </label>
-              <button
-                type="submit"
-                className="inline-flex rounded-full bg-[var(--brand-orange)] px-7 py-3 text-sm font-bold text-white"
-              >
-                Submit Inquiry
-              </button>
-            </div>
-          </form>
+          <div data-reveal data-reveal-delay={120}>
+            <ContactForm />
+          </div>
         </div>
       </section>
     </>

@@ -1,7 +1,7 @@
 .scene {
   position: relative;
   overflow: hidden;
-  min-height: 340px;
+  min-height: 360px;
   border-radius: 1.5rem;
   background:
     radial-gradient(120% 80% at 20% 12%, rgba(213, 102, 75, 0.2), transparent 52%),
@@ -103,96 +103,82 @@
   opacity: 0.9;
 }
 
-.busWrap {
+/* Large sedan / SUV side view, facing right (direction of travel) */
+.carWrap {
   position: absolute;
-  left: -24%;
-  bottom: 42px;
+  left: -28%;
+  bottom: 38px;
   z-index: 6;
-  animation: busDrive 12s cubic-bezier(0.3, 0, 0.17, 1) infinite;
+  animation: carDrive 12s cubic-bezier(0.3, 0, 0.17, 1) infinite;
 }
 
-.busShadow {
+.carShadow {
   position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: -7px;
-  height: 16px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.3);
-  filter: blur(5px);
-}
-
-.bus {
-  position: relative;
-  width: 176px;
-  height: 68px;
-  border-radius: 16px 16px 12px 12px;
-  border: 2px solid rgba(7, 61, 122, 0.7);
-  background: linear-gradient(180deg, #fefefe 0%, #f0f6ff 58%, #e2edf9 100%);
-  box-shadow: 0 8px 16px -8px rgba(7, 61, 122, 0.45);
-}
-
-.busAccent {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 8px;
-  height: 13px;
-  background: linear-gradient(90deg, #073d7a 0%, #0a4a8f 56%, #d5664b 100%);
-}
-
-.windowRow {
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  top: 24px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 6px;
-}
-
-.window {
+  left: 28px;
+  right: 18px;
+  bottom: -8px;
   height: 18px;
-  border-radius: 4px;
-  border: 1px solid rgba(7, 61, 122, 0.3);
-  background: linear-gradient(180deg, #d6ecff 0%, #b6d7f2 100%);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.32);
+  filter: blur(6px);
+}
+
+.car {
+  position: relative;
+  width: 252px;
+  height: 56px;
+  margin-top: 20px;
+  filter: drop-shadow(0 10px 14px rgba(7, 61, 122, 0.28));
+}
+
+.carSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .wheel {
   position: absolute;
-  bottom: -10px;
-  width: 28px;
-  height: 28px;
+  bottom: -12px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
   border-radius: 999px;
-  border: 4px solid #1f2b38;
-  background: #a9b9cd;
+  border: 5px solid #1a2430;
+  background: #b8c5d6;
   animation: wheelSpin 0.8s linear infinite;
 }
 
 .wheel::after {
   content: "";
   position: absolute;
-  inset: 5px;
+  inset: 6px;
   border-radius: 999px;
-  background: #4a5d72;
+  background: #3d4f63;
 }
 
 .wheelFront {
-  left: 24px;
+  right: 22px;
 }
 
 .wheelRear {
-  right: 24px;
+  left: 36px;
 }
 
-.busText {
+.carText {
   position: absolute;
-  right: 10px;
-  top: 47px;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
   font-size: 9px;
-  letter-spacing: 0.08em;
-  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  text-transform: uppercase;
   color: #073d7a;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 @keyframes laneMove {
@@ -204,9 +190,9 @@
   }
 }
 
-@keyframes busDrive {
+@keyframes carDrive {
   0% {
-    left: -24%;
+    left: -28%;
     transform: translateY(0);
   }
   17% {
@@ -234,7 +220,7 @@
     transform: translateY(-1px);
   }
   100% {
-    left: 112%;
+    left: 115%;
     transform: translateY(0);
   }
 }
@@ -258,7 +244,7 @@
 
 @media (max-width: 1023px) {
   .scene {
-    min-height: 300px;
+    min-height: 320px;
   }
 
   .cityBand {
@@ -270,34 +256,40 @@
     height: 88px;
   }
 
-  .bus {
-    width: 148px;
-    height: 60px;
+  .car {
+    width: 214px;
+    height: 48px;
+    margin-top: 18px;
   }
 
-  .windowRow {
-    top: 22px;
+  .wheel {
+    width: 30px;
+    height: 30px;
+    bottom: -10px;
   }
 
-  .window {
-    height: 15px;
+  .wheelFront {
+    right: 16px;
   }
 
-  .busText {
+  .wheelRear {
+    left: 30px;
+  }
+
+  .carText {
     font-size: 8px;
-    top: 42px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .lane,
-  .busWrap,
+  .carWrap,
   .wheel,
   .stopPin::after {
     animation: none;
   }
 
-  .busWrap {
+  .carWrap {
     left: 50%;
     transform: translateX(-50%);
   }

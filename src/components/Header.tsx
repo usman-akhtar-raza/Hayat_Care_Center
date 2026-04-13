@@ -220,10 +220,10 @@ export default function Header() {
     "transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ease-out";
 
   const shellClassGlassMobile =
-    "w-full rounded-[2rem] border border-white/65 bg-white/72 px-3 py-2 shadow-[0_12px_44px_-10px_rgba(7,61,122,0.2)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/65";
+    "w-full rounded-[2rem] border border-white/80 bg-white/92 px-3 py-2 shadow-[0_12px_44px_-10px_rgba(7,61,122,0.22)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/90";
 
   const shellClassGlassBar =
-    "w-full rounded-full border border-white/65 bg-white/72 px-3 py-2 sm:px-5 sm:py-2.5 shadow-[0_8px_32px_-12px_rgba(7,61,122,0.18)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/65";
+    "w-full rounded-full border border-white/80 bg-white/92 px-3 py-2 sm:px-5 sm:py-2.5 shadow-[0_8px_32px_-12px_rgba(7,61,122,0.2)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/90";
 
   const shellClassTransparent =
     "w-full rounded-full border border-transparent bg-transparent px-3 py-2 sm:px-5 sm:py-2.5 shadow-none";
