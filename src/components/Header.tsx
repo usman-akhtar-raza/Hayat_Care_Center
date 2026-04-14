@@ -222,22 +222,27 @@ export default function Header() {
   const shellClassGlassMobile =
     "w-full rounded-[2rem] border border-white/80 bg-white/92 px-3 py-2 shadow-[0_12px_44px_-10px_rgba(7,61,122,0.22)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/90";
 
-  const shellClassGlassBar =
-    "w-full rounded-full border border-white/80 bg-white/92 px-3 py-2 sm:px-5 sm:py-2.5 shadow-[0_8px_32px_-12px_rgba(7,61,122,0.2)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/90";
-
   const shellClassTransparent =
     "w-full rounded-full border border-transparent bg-transparent px-3 py-2 sm:px-5 sm:py-2.5 shadow-none";
 
-  const shellClass = mobileOpen
+  /** Hero: floating pill (transparent, or rounded glass when mobile menu open). Scrolled: no inner pill. */
+  const heroInnerShell = mobileOpen
     ? `${shellTransition} ${shellClassGlassMobile}`
-    : heroOverlayNav
-      ? `${shellTransition} ${shellClassTransparent}`
-      : `${shellTransition} ${shellClassGlassBar}`;
+    : `${shellTransition} ${shellClassTransparent}`;
+
+  const scrolledNavBar =
+    "w-full border-b border-slate-200/90 bg-white/95 shadow-[0_4px_20px_-6px_rgba(7,61,122,0.14)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/92";
 
   return (
     <header className="fixed inset-x-0 top-0 z-[60] w-full bg-transparent">
-      <div className={`${headerGutter} pt-3 sm:pt-4 md:pt-5`}>
-        <div className={shellClass}>
+      <div
+        className={
+          heroOverlayNav
+            ? `${headerGutter} pt-3 sm:pt-4 md:pt-5`
+            : `${scrolledNavBar} ${shellTransition}`
+        }
+      >
+        <div className={heroOverlayNav ? heroInnerShell : `${headerGutter} py-2 sm:py-2.5 md:py-3`}>
           <nav
             aria-label="Primary"
             className="grid grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-4"

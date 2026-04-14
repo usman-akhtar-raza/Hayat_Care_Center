@@ -560,6 +560,40 @@ main > section {
   }
 }
 
+/* Homepage: community stats infinite horizontal loop */
+@keyframes home-stats-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.home-stats-marquee-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
+}
+
+.home-stats-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  padding-block: 0.25rem;
+  padding-inline: 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-stats-marquee-track--animate {
+    animation: home-stats-marquee 42s linear infinite;
+  }
+
+  .home-stats-marquee-track--animate:hover {
+    animation-play-state: paused;
+  }
+}
+
 /* Benefits page: meal item left-border reveal */
 .benefit-meal-item {
   border-left: 3px solid transparent;
@@ -654,5 +688,9 @@ main > section {
   .benefit-card-stagger[data-revealed="true"] {
     animation: none;
     transform: none;
+  }
+
+  .home-stats-marquee-track--animate {
+    animation: none;
   }
 }

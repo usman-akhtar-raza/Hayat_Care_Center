@@ -1,16 +1,21 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
 import HeroSection from "@/components/home/HeroSection";
+import CommunityStatsMarquee from "@/components/home/CommunityStatsMarquee";
+import HomeTestimonialsShowcase from "@/components/home/HomeTestimonialsShowcase";
 import ServicesRotatingGrid from "@/components/home/ServicesRotatingGrid";
 import VerticalShowcaseCards from "@/components/home/VerticalShowcaseCards";
 import ScrollFloat from "@/components/reactbits/ScrollFloat";
 import {
   adultCareCenterSummary,
   communityStats,
+  contactDetails,
   faqs,
-  hayatBranches,
+  hayatLocationSectionIntro,
+  hayatPrimaryLocation,
   homeCareAgencySummary,
   homeQuickLinks,
+  homeQuickPathsIntro,
   nonMedicalTransportationSummary,
   homeTestimonialStories,
   homeVerticalsDeepDive,
@@ -66,63 +71,9 @@ export default function Home() {
     <div className="home-theme-page">
       <HeroSection />
 
-      <section className="home-surface-soft border-b border-slate-200 py-10 md:py-12">
-        <div className={homeShell}>
-          <div className={`${homeInner} grid gap-3 sm:grid-cols-2 lg:grid-cols-4`}>
-            {communityStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-xl border border-slate-200/80 bg-white px-5 py-4 text-center shadow-sm"
-              >
-                <p className="text-xl font-bold tabular-nums text-slate-900">{stat.value}</p>
-                <p className="mt-1 text-xs font-medium leading-snug text-slate-600">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="adult-day-center" className="home-surface-warm scroll-mt-24 border-b border-slate-200 py-16 md:py-20">
-        <div className={homeShell}>
-          <div className={`${homeInner} grid items-center gap-12 md:grid-cols-2 md:gap-14`}>
-          <div data-reveal>
-            <p className={sectionEyebrow}>{adultCareCenterSummary.eyebrow}</p>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight text-slate-900 md:text-4xl">
-              {adultCareCenterSummary.title}
-            </h2>
-            <p className="mt-5 text-base leading-7 text-slate-600">{adultCareCenterSummary.body}</p>
-            <ul className="mt-6 space-y-2.5 text-sm leading-6 text-slate-600">
-              {adultCareCenterSummary.bullets.map((item) => (
-                <li key={item} className="flex gap-2.5">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--brand-gold)]" aria-hidden />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contact" className={btnPrimary}>
-                Plan a center visit
-              </Link>
-              <Link href="/amenities" className={btnOutline}>
-                Amenities
-              </Link>
-            </div>
-          </div>
-          <div data-reveal data-reveal-delay={80} className="relative aspect-[3/2] overflow-hidden rounded-2xl  bg-white ">
-          <Image
-              src="/images/full.png"
-              alt="Adult care center at Hayat"
-            fill
-              className="object-cover bg-white"
-              sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Deep dive: three verticals */}
-      <section id="our-verticals" className="home-surface-feature scroll-mt-24 border-b border-slate-200 py-16 md:py-24">
+      <CommunityStatsMarquee items={communityStats} />
+  {/* Deep dive: three verticals */}
+  <section id="our-verticals" className="home-surface-feature scroll-mt-24 border-b border-slate-200 py-16 md:py-24">
         <div className={homeShell}>
           <div className={homeInner}>
           <div className={sectionIntro}>
@@ -178,77 +129,41 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Branches / locations */}
-      <section className="home-surface-cool border-b border-slate-200 py-16 md:py-20">
+      <section id="adult-day-center" className="home-surface-warm scroll-mt-24 border-b border-slate-200 py-16 md:py-20">
         <div className={homeShell}>
-          <div className={homeInner}>
-          <div className={sectionIntro}>
-            <p data-reveal className={sectionEyebrow}>
-              Locations & branches
-            </p>
-            <h2 data-reveal data-reveal-delay={40} className="mt-3 text-3xl font-semibold text-slate-900 md:text-4xl">
-              Where to find Hayat
+          <div className={`${homeInner} grid items-center gap-12 md:grid-cols-2 md:gap-14`}>
+          <div data-reveal>
+            <p className={sectionEyebrow}>{adultCareCenterSummary.eyebrow}</p>
+            <h2 className="mt-3 text-3xl font-semibold leading-tight text-slate-900 md:text-4xl">
+              {adultCareCenterSummary.title}
             </h2>
-            <p data-reveal data-reveal-delay={70} className="mt-3 text-slate-600">
-              Three front doors, one organization—center-based care, home care coordination, and enrollment support. Update
-              city names and service areas anytime in your content file to match your real map.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {hayatBranches.map((branch, index) => (
-              <article
-                key={branch.name}
-                data-reveal
-                data-reveal-delay={80 + index * 60}
-                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-lg font-bold text-slate-900">{branch.name}</h3>
-                <p className="mt-1 text-sm font-semibold text-[var(--brand-gold)]">{branch.area}</p>
-                <ul className="mt-4 flex-1 space-y-2 text-sm leading-relaxed text-slate-600">
-                  {branch.lines.map((line) => (
-                    <li key={line}>{line}</li>
-                  ))}
-                </ul>
-                <Link href={branch.href} className={`${btnPrimary} mt-6 w-full sm:w-auto`}>
-                  {branch.ctaLabel}
-                </Link>
-              </article>
-            ))}
-          </div>
-          </div>
-            </div>
-      </section>
-
-      <section className="home-surface-soft border-b border-slate-200 py-14 md:py-16">
-        <div className={homeShell}>
-          <div className={homeInner}>
-          <div className={sectionIntro}>
-            <p data-reveal className={sectionEyebrow}>
-              Quick paths
-            </p>
-            <h2
-              data-reveal
-              data-reveal-delay={40}
-              className="mt-3 text-2xl font-semibold leading-tight text-slate-900 md:text-3xl"
-            >
-              Where to next
-            </h2>
-          </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {homeQuickLinks.map((item, index) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                data-reveal
-                data-reveal-delay={60 + index * 40}
-                className="group rounded-xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md"
-              >
-                <span className="text-sm font-bold text-slate-900 group-hover:text-[var(--brand-gold)]">{item.title}</span>
-                <span className="mt-1.5 block text-sm leading-relaxed text-slate-600">{item.description}</span>
+            <p className="mt-5 text-base leading-7 text-slate-600">{adultCareCenterSummary.body}</p>
+            <ul className="mt-6 space-y-2.5 text-sm leading-6 text-slate-600">
+              {adultCareCenterSummary.bullets.map((item) => (
+                <li key={item} className="flex gap-2.5">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--brand-gold)]" aria-hidden />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/contact" className={btnPrimary}>
+                Plan a center visit
               </Link>
-            ))}
+              <Link href="/amenities" className={btnOutline}>
+                Amenities
+              </Link>
+            </div>
           </div>
+          <div data-reveal data-reveal-delay={80} className="relative aspect-[3/2] overflow-hidden rounded-2xl  bg-white ">
+          <Image
+              src="/images/full.png"
+              alt="Adult care center at Hayat"
+            fill
+              className="object-cover bg-white"
+              sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
           </div>
         </div>
       </section>
@@ -329,6 +244,114 @@ export default function Home() {
               </div>
         </div>
       </section>
+
+    
+
+      {/* Single location — reference-style hero card */}
+      <section className="home-surface-cool border-b border-slate-200 py-16 md:py-20">
+        <div className={homeShell}>
+          <div className={homeInner}>
+            <div className={sectionIntro}>
+              <p data-reveal className={sectionEyebrow}>
+                Locations & branches
+              </p>
+              <h2
+                data-reveal
+                data-reveal-delay={40}
+                className="mt-4 font-[family-name:var(--font-playfair),serif] text-3xl font-semibold leading-[1.15] tracking-tight text-[#073d7a] md:text-[2.5rem]"
+              >
+                Where to find Hayat
+              </h2>
+              <p
+                data-reveal
+                data-reveal-delay={70}
+                className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 md:mx-auto md:text-base"
+              >
+                {hayatLocationSectionIntro}
+              </p>
+            </div>
+
+            <div className="mt-10 flex justify-center px-0 sm:px-4">
+              <article
+                data-reveal
+                data-reveal-delay={90}
+                className="flex w-full max-w-lg flex-col rounded-xl border border-slate-200/90 bg-white p-6 shadow-sm sm:p-8 md:max-w-xl"
+              >
+                <h3 className="font-[family-name:var(--font-playfair),serif] text-xl font-semibold leading-snug text-[#073d7a] md:text-2xl">
+                  {hayatPrimaryLocation.name}
+                </h3>
+                <p className="mt-2 text-sm font-semibold text-[var(--brand-gold)] md:text-base">{hayatPrimaryLocation.area}</p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">{contactDetails.address}</p>
+                <ul className="mt-5 flex-1 space-y-2.5 text-sm leading-relaxed text-slate-600">
+                  {hayatPrimaryLocation.lines.map((line) => (
+                    <li key={line} className="flex gap-2">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--brand-gold)]" aria-hidden />
+                      {line}
+                    </li>
+                  ))}
+                </ul>
+                <Link href={hayatPrimaryLocation.href}
+                  className={`${btnPrimary} mt-8 w-full justify-center text-center sm:mt-10`}
+                >
+                  {hayatPrimaryLocation.ctaLabel}
+                </Link>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-surface-soft border-b border-slate-200 py-16 md:py-20">
+        <div className={homeShell}>
+          <div className={homeInner}>
+            <div className={sectionIntro}>
+              <p data-reveal className={sectionEyebrow}>
+                Quick paths
+              </p>
+              <h2
+                data-reveal
+                data-reveal-delay={40}
+                className="mt-4 font-[family-name:var(--font-playfair),serif] text-3xl font-semibold leading-[1.15] tracking-tight text-[#073d7a] md:text-[2.5rem]"
+              >
+                Where to next
+              </h2>
+              <p
+                data-reveal
+                data-reveal-delay={70}
+                className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 md:mx-auto md:text-base"
+              >
+                {homeQuickPathsIntro}
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {homeQuickLinks.map((item, index) => (
+                <Link
+                  key={`${item.href}-${item.title}`}
+                  href={item.href}
+                  data-reveal
+                  data-reveal-delay={80 + index * 45}
+                  className="group flex h-full flex-col rounded-xl border border-slate-200/90 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md"
+                >
+                  <span className="text-base font-bold text-slate-900 transition-colors group-hover:text-[var(--brand-gold)]">
+                    {item.title}
+                  </span>
+                  <span className="mt-2 block flex-1 text-sm leading-relaxed text-slate-600">
+                    {item.description}
+                  </span>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.12em] text-[#073d7a] transition-colors group-hover:text-[var(--brand-gold)]">
+                    View
+                    <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    
 
       <section className="home-surface-cool border-b border-slate-200 py-16 md:py-20">
         <div className={homeShell}>
@@ -467,72 +490,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Long testimonials */}
-      <section className="home-surface-feature border-b border-slate-200 py-16 md:py-24">
-        <div className={homeShell}>
-          <div className={homeInner}>
-          <div className={sectionIntro}>
-            <p data-reveal className={sectionEyebrow}>
-              Testimonials
-            </p>
-            <h2 data-reveal data-reveal-delay={40} className="mt-3 text-3xl font-semibold text-slate-900 md:text-4xl">
-              Stories from families and participants
-            </h2>
-            <p data-reveal data-reveal-delay={70} className="mt-3 text-slate-600">
-              Longer reflections—not just one-liners—so you can see how Hayat shows up when routines, health, and emotions
-              are all in play.
-            </p>
-          </div>
-
-          {featuredStory && (
-            <figure
-              data-reveal
-              data-reveal-delay={100}
-              className="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md"
-            >
-              <div className="grid lg:grid-cols-[1fr_1.15fr]">
-                <div className="bg-gradient-to-br from-[var(--brand-gold)]/20 to-amber-50/90 p-8 md:p-10 lg:p-12">
-                  <blockquote className="font-[family-name:var(--font-playfair),serif] text-2xl font-medium leading-snug text-slate-900 md:text-3xl">
-                    &ldquo;{featuredStory.quote}&rdquo;
-                  </blockquote>
-                </div>
-                <div className="flex flex-col justify-center border-t border-slate-200 p-8 md:p-10 lg:border-t-0 lg:border-l lg:border-slate-200">
-                  <p className="text-sm leading-7 text-slate-600">{featuredStory.story}</p>
-                  <figcaption className="mt-6 border-t border-slate-100 pt-6">
-                    <cite className="not-italic text-base font-bold text-slate-900">{featuredStory.name}</cite>
-                    <span className="mt-1 block text-sm text-slate-500">{featuredStory.role}</span>
-                  </figcaption>
-                </div>
-              </div>
-            </figure>
-          )}
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {moreStories.map((t, index) => (
-              <blockquote
-                key={t.name}
-                data-reveal
-                data-reveal-delay={120 + index * 50}
-                className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-              >
-                <p className="text-sm font-semibold text-slate-900">&ldquo;{t.quote}&rdquo;</p>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600">{t.story}</p>
-                <footer className="mt-6 border-t border-slate-100 pt-4">
-                  <p className="text-sm font-bold text-slate-900">{t.name}</p>
-                  <p className="text-xs text-slate-500">{t.role}</p>
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-
-          <div data-reveal data-reveal-delay={200} className="mt-12 flex justify-center">
-            <Link href="/testimonials" className={btnOutline}>
-              View all testimonials
-            </Link>
-          </div>
-          </div>
-        </div>
-      </section>
+      <HomeTestimonialsShowcase featured={featuredStory} stories={moreStories} />
 
       {/* FAQ preview */}
       <section className="home-surface-soft border-b border-slate-200 py-16 md:py-20">

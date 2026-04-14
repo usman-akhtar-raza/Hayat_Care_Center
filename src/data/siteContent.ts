@@ -203,39 +203,21 @@ export const nonMedicalTransportationSummary = {
   ],
 } as const;
 
-/** Locations / service hubs — update names and areas to match your real footprint */
-export const hayatBranches = [
-  {
-    name: "Main campus — Adult care center",
-    area: "Springfield, IL",
-    lines: [
-      "Full daytime programming, dining, activities, and nursing oversight per plan.",
-      "Tours by appointment; same-day callbacks for urgent questions.",
-    ],
-    ctaLabel: "Plan a tour",
-    href: "/contact",
-  },
-  {
-    name: "Hayat Home Care — Field services",
-    area: "Greater Springfield & nearby towns",
-    lines: [
-      "In-home assessments, caregiver matching, and schedule changes handled by a dedicated coordinator.",
-      "Coverage varies by ZIP—ask us to confirm your address.",
-    ],
-    ctaLabel: "Request coverage check",
-    href: "/contact",
-  },
-  {
-    name: "Family & enrollment office",
-    area: "By appointment (phone or in-person)",
-    lines: [
-      "Consultations for either vertical, paperwork support, and help transitioning between center and home.",
-      "Resource referrals when Hayat is not the right fit—we would rather point you honestly than oversell.",
-    ],
-    ctaLabel: "Book a consult",
-    href: "/contact",
-  },
-] as const;
+/** Single campus / location — paired with `contactDetails.address` on the homepage */
+export const hayatPrimaryLocation = {
+  name: "Main campus — Adult care center",
+  area: "Springfield, IL",
+  lines: [
+    "Daytime programming, dining, activities, and supervised support—all from one welcoming building.",
+    "Home care coordination and non-medical transportation are arranged through the same team, so families hear one clear plan.",
+    "Tours and consults by appointment; we return calls the same day when you have an urgent question.",
+  ],
+  ctaLabel: "Plan a tour",
+  href: "/contact",
+} as const;
+
+export const hayatLocationSectionIntro =
+  "Hayat operates from one main campus in Springfield. Whether you need the adult care center, help at home, or ride coordination, you start here—same address, same people who know your name.";
 
 /** Long-form testimonial blocks for the homepage */
 export const homeTestimonialStories = [
@@ -293,39 +275,43 @@ export const homeQuickLinks = [
   {
     title: "Adult care center",
     href: "/#adult-day-center",
-    description: "Daytime community care, activities, meals, and supervised support.",
+    description: "Daytime community care, activities, meals, and supervised support on the homepage overview.",
   },
   {
     title: "Home care agency",
     href: "/#home-care-agency",
-    description: "Trusted caregivers at home for personal care and daily routines.",
+    description: "Trusted caregivers at home for personal care, companionship, and daily routines.",
   },
   {
     title: "Non-medical transportation",
     href: "/#non-medical-transportation",
-    description: "Scheduled rides for appointments, errands, and community visits—not emergency transport.",
+    description: "Scheduled rides for appointments and errands—not emergency medical transport.",
   },
   {
     title: "Amenities",
     href: "/amenities",
-    description: "Welcoming shared spaces and everyday comforts that elevate the experience.",
+    description: "Shared spaces, dining, and everyday comforts that shape life at Hayat.",
   },
   {
     title: "Activities & events",
     href: "/activities-events",
-    description: "Programs that add structure, joy, and connection to the week.",
+    description: "Programs that add structure, joy, and social connection to the week.",
   },
   {
-    title: "Adult care center",
+    title: "Center program page",
     href: "/adult-care-center",
-    description: "See how daytime support is structured with activities meals and supervision.",
+    description: "Deeper look at daytime support, staffing, and what families can expect.",
   },
   {
     title: "Schedule a consult",
     href: "/contact",
-    description: "Tour the center, request an in-home assessment, or ask a question.",
+    description: "Plan a tour, request an in-home assessment, or ask a question—we respond quickly.",
   },
 ] as const;
+
+/** Short line under “Where to next” on the homepage. */
+export const homeQuickPathsIntro =
+  "Jump to a section of the site or open a full page—each path is written for families comparing options.";
 
 export const homeFeatureCards = [
   {
