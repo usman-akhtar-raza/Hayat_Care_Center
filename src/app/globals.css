@@ -97,8 +97,9 @@ h6 {
 }
 
 @layer components {
+  /* Animated gradient border: CTAs only — not any `header button` (dropdowns, menu, mobile accordions). */
   :where(
-      button,
+      button:not(:is(header button)),
       a[class*="inline-flex"][class*="rounded"],
       a[class*="flex"][class*="rounded-full"]
     ) {
@@ -110,7 +111,7 @@ h6 {
   }
 
   :where(
-      button,
+      button:not(:is(header button)),
       a[class*="inline-flex"][class*="rounded"],
       a[class*="flex"][class*="rounded-full"]
     )::before {
@@ -141,7 +142,7 @@ h6 {
   }
 
   :where(
-      button,
+      button:not(:is(header button)),
       a[class*="inline-flex"][class*="rounded"],
       a[class*="flex"][class*="rounded-full"]
     ):is(:hover, :focus-visible)::before {
@@ -150,7 +151,7 @@ h6 {
   }
 
   :where(
-      button,
+      button:not(:is(header button)),
       a[class*="inline-flex"][class*="rounded"],
       a[class*="flex"][class*="rounded-full"]
     ):is(:hover, :focus-visible) {
@@ -171,7 +172,7 @@ h6 {
 @media (prefers-reduced-motion: reduce) {
   @layer components {
     :where(
-        button,
+        button:not(:is(header button)),
         a[class*="inline-flex"][class*="rounded"],
         a[class*="flex"][class*="rounded-full"]
       ):is(:hover, :focus-visible)::before {
