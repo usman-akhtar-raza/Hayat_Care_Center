@@ -347,7 +347,7 @@ export default function Home() {
                   WHY
                 </p>
                 <h2 className="mt-1 font-[family-name:var(--font-playfair),serif] text-3xl font-bold leading-[1.15] tracking-tight text-slate-900 md:text-[2.5rem]">
-                   Hayat Care<span className="text-[var(--brand-gold)]">Center</span>
+                   Hayat Care<span className="text-[var(--brand-gold)]"> Center</span>
                 </h2>
 
                 <p className="mt-5 text-sm leading-relaxed text-slate-600 md:text-base">
