@@ -1,29 +1,29 @@
 const testimonials = [
   {
     name: "Fatima A.",
-    relation: "Daughter of Member",
-    text: "My mother looks forward to coming here every single day. The staff treats her like family, and the activities keep her mind sharp and her spirits high. Hayat has been a blessing for our whole family.",
+    relation: "Family Care Partner",
+    text: "Our loved one looks forward to coming here every single day. The staff treats participants like family, and the activities support focus, confidence, and connection. Hayat has been a blessing for our whole family.",
     initials: "FA",
     color: "bg-[var(--primary)]",
   },
   {
     name: "Roberto M.",
     relation: "Member",
-    text: "I was lonely at home before I found Hayat. Now I have friends, I exercise, I make art, and I eat delicious food. This place gives me something to wake up for every morning.",
+    text: "I was lonely at home before I found Hayat. Now I have friends, I exercise, I make art, and I eat delicious food. This place gives adults at different stages of life something to look forward to every morning.",
     initials: "RM",
     color: "bg-[var(--accent)]",
   },
   {
     name: "Sarah K.",
-    relation: "Family Member",
-    text: "The transportation service is a lifesaver for our family. Knowing my father is safe, engaged, and cared for while I am at work gives me incredible peace of mind.",
+    relation: "Family Contact",
+    text: "The transportation service is a lifesaver for our family. Knowing our loved one is safe, engaged, and cared for during the day gives me incredible peace of mind.",
     initials: "SK",
     color: "bg-[var(--sky)]",
   },
   {
     name: "David L.",
-    relation: "Son of Member",
-    text: "We tried three other adult daycare centers before Hayat. The difference is night and day. The staff genuinely care, and my mom has never been happier. Worth every penny.",
+    relation: "Care Partner",
+    text: "We tried three other adult care programs before Hayat. The difference is night and day. The staff genuinely care, and our loved one has never been more comfortable.",
     initials: "DL",
     color: "bg-[var(--primary-dark)]",
   },
@@ -41,8 +41,8 @@ export default function TestimonialsSection() {
             What Families Are Saying
           </h2>
           <p className="text-[var(--text-muted)] max-w-2xl mx-auto">
-            Hear from the families and members who trust Hayat with the care
-            of their loved ones.
+            Hear from families and participants who trust Hayat with care for
+            young adults through older adults.
           </p>
         </div>
 

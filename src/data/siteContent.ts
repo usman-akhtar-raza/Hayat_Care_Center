@@ -17,7 +17,7 @@ export const navGroups = [
     links: [
       { label: "About Us", href: "/about", description: "Get to know Hayat, our setting, and our approach." },
       { label: "Our Facility", href: "/community/our-facility", description: "See the spaces, upgrades, and design that shape daily life." },
-      { label: "Testimonials", href: "/testimonials", description: "Hear how residents and families describe the experience." },
+      { label: "Testimonials", href: "/testimonials", description: "Hear how participants and families describe the experience." },
     ],
   },
   {
@@ -232,39 +232,39 @@ export const hayatLocationSectionIntro =
 export const homeTestimonialStories = [
   {
     quote:
-      "The community feels calm, well cared for, and truly welcoming. My father settled in faster than we expected.",
+      "The community feels calm, well cared for, and truly welcoming. Our loved one settled in faster than we expected.",
     story:
-      "We toured three places. Hayat was the only one where staff greeted people by name and the activity board looked like real life—not a brochure. Six weeks in, Dad is eating better and actually jokes with the dining team. The front desk texts us a quick update when something changes; that alone lowered our stress.",
+      "We toured three places. Hayat was the only one where staff greeted people by name and the activity board looked like real life—not a brochure. Six weeks in, our loved one is eating better and actually jokes with the dining team. The front desk texts us a quick update when something changes; that alone lowered our stress.",
     name: "Fatima A.",
-    role: "Daughter of a center participant",
+    role: "Family care partner",
   },
   {
     quote:
       "What stood out was the balance between support and independence. Attentive without feeling clinical.",
     story:
-      "My uncle did not want to feel babysat. The team figured out how much help he would accept and built from there. When he had a rough week, they adjusted without making it a big production. We finally sleep through the night again.",
+      "Our family member did not want to feel managed. The team figured out how much help would be accepted and built from there. When the week got rough, they adjusted without making it a big production. We finally sleep through the night again.",
     name: "Michael R.",
     role: "Family caregiver",
   },
   {
     quote:
-      "From meals to activities, the day has structure again. My mother looks forward to going.",
+      "From meals to activities, the day has structure again. Our loved one looks forward to going.",
     story:
-      "Isolation was eating away at her mood. Having lunch with other people and a reason to get dressed has been as important as any medication change. Staff noticed when she was quieter than usual and called us—we caught a UTI early.",
+      "Isolation was eating away at daily mood. Having lunch with other people and a reason to get dressed has been as important as any medication change. Staff noticed when participation was quieter than usual and called us—we caught a health concern early.",
     name: "Sara K.",
-    role: "Daughter of a participant",
+    role: "Care partner",
   },
   {
     quote:
-      "Home care from Hayat let my parents stay in their house together—with real backup we could trust.",
+      "Home care from Hayat helped our household keep support at home—with real backup we could trust.",
     story:
       "We started with mornings and weekends, then added overnights after a fall scare. The coordinators explained every change in writing. When one aide was out sick, they did not leave us hanging; we always knew who was coming through the door.",
     name: "Daniel L.",
-    role: "Son of home care clients",
+    role: "Home care family contact",
   },
   {
     quote:
-      "Staff know people personally—that shows in greetings, gentle redirection, and family updates.",
+      "Staff know young adults through older adults personally—that shows in greetings, gentle redirection, and family updates.",
     story:
       "As guardian, I need documentation and clarity. Hayat’s notes are specific enough for court updates but still read human. I have fired agencies that treated us like a ticket number; here we feel partnered.",
     name: "Nadia H.",
@@ -577,34 +577,34 @@ export const floorPlans = [
 
 export const testimonials = [
   {
-    quote: "The community feels calm, well cared for, and truly welcoming. My father settled in faster than we expected.",
+    quote: "The community feels calm, well cared for, and truly welcoming. Our loved one settled in faster than we expected.",
     name: "Fatima A.",
-    role: "Daughter of Resident",
+    role: "Family Care Partner",
   },
   {
-    quote: "What stood out to us was the balance between support and independence. The team is attentive without making it feel clinical.",
+    quote: "What stood out to us was the balance between support and independence for young adults through older adults. The team is attentive without making it feel clinical.",
     name: "Michael R.",
     role: "Family Caregiver",
   },
   {
-    quote: "From the meals to the activities, everything gives the day structure. My mother looks forward to being involved again.",
+    quote: "From the meals to the activities, everything gives the day structure. Our loved one looks forward to being involved again.",
     name: "Sara K.",
-    role: "Resident Family Member",
+    role: "Participant Family Contact",
   },
   {
     quote: "They made the transition easier by communicating clearly and handling the practical details with real patience.",
     name: "Daniel L.",
-    role: "Son of Resident",
+    role: "Home Care Family Contact",
   },
   {
-    quote: "The staff know residents personally, and that shows in how they greet people, redirect gently, and keep families updated.",
+    quote: "The staff know adult participants personally, and that shows in how they greet people, redirect gently, and keep families updated.",
     name: "Nadia H.",
     role: "Family Guardian",
   },
   {
     quote: "I like that there is always something happening, but I can also find a quiet place when I want one.",
-    name: "Resident Testimonial",
-    role: "Community Resident",
+    name: "Participant Testimonial",
+    role: "Community Participant",
   },
 ] as const;
 

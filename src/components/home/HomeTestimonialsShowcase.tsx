@@ -87,14 +87,14 @@ export default function HomeTestimonialsShowcase({
               className="mt-3  font-[family-name:var(--font-playfair),serif] text-3xl font-bold leading-[1.15] tracking-tight text-[#d5664b] md:text-[2.75rem]"
             >
               5-Star Reviews from{" "}
-              <span className="text-[#4a9eff]">Colorado Families</span>
+              <span className="text-[#4a9eff]">Families And Participants</span>
             </p>
             <p
               data-reveal
               data-reveal-delay={40}
               className="mt-4 text-sm leading-relaxed text-blue-100/70 md:text-base"
             >
-              Here&apos;s what families in our community have to say about working with us.
+              Here&apos;s what families and participants say about care for young adults through older adults.
             </p>
           </div>
 
@@ -150,7 +150,7 @@ export default function HomeTestimonialsShowcase({
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="rounded-full border border-slate-200 px-3 py-1 text-[11px] font-semibold text-slate-600">
-                      Family Care
+                      Adult Care
                     </span>
                     <span className="flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1 text-[11px] font-semibold text-slate-600">
                       <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none">

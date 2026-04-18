@@ -6,7 +6,7 @@ import { testimonials } from "@/data/siteContent";
 
 export const metadata: Metadata = {
   title: "Testimonials | Hayat Care Centers",
-  description: "Read what residents and families say about Hayat Care Centers.",
+  description: "Read what participants and families say about Hayat Care Centers.",
 };
 
 export default function TestimonialsPage() {
@@ -26,7 +26,7 @@ export default function TestimonialsPage() {
               containerClassName="mt-3 max-w-3xl text-4xl font-bold text-[var(--ink)] md:text-5xl"
               textClassName="text-balance"
             >
-              How Families And Residents Describe The Hayat Experience
+              How Families And Participants Describe The Hayat Experience
             </ScrollFloat>
           </div>
           <p
