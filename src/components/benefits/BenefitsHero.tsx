@@ -73,7 +73,7 @@ export default function BenefitsHero() {
       {/* Background image with parallax */}
       <motion.div className="absolute inset-0" style={{ y: imageY }}>
         <Image
-          src="/images/seniors/senior-care-center-02.jpg"
+          src="/newimage.jpg"
           alt=""
           fill
           priority
