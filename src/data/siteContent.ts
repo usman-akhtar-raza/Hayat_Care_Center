@@ -1055,12 +1055,13 @@ export const benefitsHero = {
 
 export const benefitHighlights = [
   {
-    stat: "3",
-    label: "Chef-prepared meals daily",
+    stat: "Daily",
+    label: "Chess & mind-sport play",
     description:
-      "Breakfast, lunch, and dinner crafted with seasonal ingredients, dietary accommodations, and the warmth of shared dining.",
-    lucideIcon: "UtensilsCrossed",
-    image: "/images/meal-plan/meal-02.jpg",
+      "Open boards, friendly matches, and coached games for beginners through experienced players—chess as a social mind sport: concentration, patience, and conversation around the table.",
+    lucideIcon: "ChessKnight",
+    image:
+      "https://images.unsplash.com/photo-1758691031235-9db55497d898?auto=format&fit=crop&w=1600&q=82",
   },
   {
     stat: "7",

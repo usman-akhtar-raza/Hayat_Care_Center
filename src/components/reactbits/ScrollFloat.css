@@ -9,8 +9,18 @@
   line-height: 1.3;
 }
 
+/* Words stay on one line; whitespace between words can still wrap */
+.sf-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .sf-char {
   display: inline-block;
+}
+
+.sf-ws {
+  white-space: normal;
 }
 
 @media (prefers-reduced-motion: reduce) {

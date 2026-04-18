@@ -270,16 +270,16 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="mt-10 grid gap-6 lg:grid-cols-[1.05fr_1fr] lg:items-start">
+            <div className="mt-10 grid gap-6 lg:grid-cols-[1.05fr_1fr] lg:items-stretch">
               <div
                 data-reveal
                 data-reveal-delay={90}
-                className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+                className="relative min-h-[280px] h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:min-h-0"
               >
                 <iframe
                   title="Hayat care center location map"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=-104.7498%2C38.8019%2C-104.7443%2C38.8064&layer=mapnik"
-                  className="h-[290px] w-full md:h-[360px]"
+                  className="absolute inset-0 h-full w-full border-0"
                   loading="lazy"
                 />
                 <div
@@ -305,7 +305,7 @@ export default function Home() {
               <article
                 data-reveal
                 data-reveal-delay={130}
-                className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm sm:p-6"
+                className="flex h-full flex-col rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm sm:p-6"
               >
                 <h3 className="text-2xl font-semibold tracking-tight text-slate-900">Communities We Serve</h3>
                 <div className="mt-5 rounded-xl border border-[#3152b7]/20 bg-[#3152b7] p-4 text-white shadow-sm">

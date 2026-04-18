@@ -5,13 +5,13 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import {
   type LucideIcon,
   CalendarHeart,
+  ChessKnight,
   ClipboardCheck,
   HeartHandshake,
-  UtensilsCrossed,
 } from "lucide-react";
 
 const timelineIconMap: Record<string, LucideIcon> = {
-  UtensilsCrossed,
+  ChessKnight,
   CalendarHeart,
   HeartHandshake,
   ClipboardCheck,

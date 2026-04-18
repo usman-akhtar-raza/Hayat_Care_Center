@@ -50,14 +50,32 @@ export default function ScrollFloat({
     return () => mediaQuery.removeEventListener("change", update);
   }, []);
 
+  /** Split into words so line breaks never cut a word in half (each char was inline-block). */
   const splitText = useMemo(() => {
     const text =
       typeof children === "string" ? children.replace(/\s+/g, " ").trim() : "";
-    return text.split("").map((char, index) => (
-      <span className="sf-char" key={index}>
-        {char === " " ? "\u00A0" : char}
-      </span>
-    ));
+    if (!text) return null;
+
+    const parts = text.split(/(\s+)/);
+    return parts.map((part, partIndex) => {
+      if (/^\s+$/.test(part)) {
+        return (
+          <span key={`ws-${partIndex}`} className="sf-ws">
+            {part}
+          </span>
+        );
+      }
+      if (!part) return null;
+      return (
+        <span key={`w-${partIndex}`} className="sf-word">
+          {part.split("").map((char, charIndex) => (
+            <span className="sf-char" key={charIndex}>
+              {char}
+            </span>
+          ))}
+        </span>
+      );
+    });
   }, [children]);
 
   useEffect(() => {
