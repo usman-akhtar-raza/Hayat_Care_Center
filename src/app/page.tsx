@@ -25,7 +25,7 @@ import {
 
 const photoAdultCare = "/images/usedimages/adultcare.png";
 const photoHomeCare = "/images/usedimages/homcare.png";
-const photoNonMedicalTransport = "/images/usedimages/transportation.png";
+const photoNonMedicalTransport = "/hayat_transport.jpeg";
 
 const galleryStrip = [
   {

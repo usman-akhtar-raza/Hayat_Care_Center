@@ -67,7 +67,7 @@ export default function NonMedicalTransportationPage() {
         description={nonMedicalTransportationSummary.body}
         primaryCta={{ label: "Request ride information", href: "/contact" }}
         secondaryCta={{ label: "Explore adult care center", href: "/adult-care-center" }}
-        imageSrc="/images/usedimages/trans.png"
+        imageSrc="/hayat_transport.jpeg"
         imageAlt="Vehicle for scheduled non-medical transportation"
       />
 

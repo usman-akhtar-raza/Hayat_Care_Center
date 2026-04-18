@@ -186,10 +186,16 @@ export const homeVerticalsDeepDive = {
       "Clients from young adulthood through older adulthood who need safe, scheduled transportation to appointments, errands, or social visits—not emergency medical transport, but the everyday trips that keep independence possible.",
     details: [
       "Door-through-door or curb-to-curb options depending on mobility; drivers oriented to patience, pacing, and clear communication.",
+      "Skilled and non-skilled support staff are available when arranged in advance for rides that need extra assistance.",
       "Coordination with the center or home care team so pickup windows align with programming or visit schedules.",
       "Advance booking preferred; same-day requests handled when capacity allows.",
     ],
-    outcomes: ["Predictable scheduling", "Trained, vetted drivers", "Works alongside center & home care plans"],
+    outcomes: [
+      "Predictable scheduling",
+      "Trained, vetted drivers",
+      "Skilled and non-skilled staff options",
+      "Works alongside center & home care plans",
+    ],
   },
 } as const;
 
@@ -197,10 +203,11 @@ export const nonMedicalTransportationSummary = {
   eyebrow: "Non-medical transportation",
   title: "Rides that respect your time, mobility, and dignity",
   body:
-    "Our non-medical transportation service helps clients get to medical appointments, therapy, the adult day center, shopping, and community events—without treating you like a number on a route. It is not ambulance or emergency care; it is reliable, courteous transport when driving yourself is no longer the best option.",
+    "Our non-medical transportation service helps clients get to medical appointments, therapy, the adult day center, and community events—without treating you like a number on a route. It is not ambulance or emergency care; it is reliable, courteous transport when driving yourself is no longer the best option.",
   bullets: [
     "Scheduled pickups aligned with your care plan and family preferences",
     "Vehicles and assistance levels matched to walkers, wheelchairs, or step-free needs when arranged in advance",
+    "Skilled and non-skilled support staff available when arranged in advance for added ride assistance",
     "Clear communication if a delay happens—we call families, not the other way around",
   ],
 } as const;

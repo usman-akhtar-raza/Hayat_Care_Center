@@ -147,25 +147,6 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-
-          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {communityStats.map((stat, index) => (
-              <BorderGlow
-                key={stat.label}
-                data-reveal
-                data-reveal-delay={index * 90}
-                data-tilt
-                className="h-full"
-                borderRadius={16}
-                glowRadius={24}
-              >
-                <article className="h-full rounded-2xl bg-white p-6">
-                  <p className="text-3xl font-bold text-[var(--brand-navy)]">{stat.value}</p>
-                  <p className="mt-1 text-sm text-[var(--ink-soft)]">{stat.label}</p>
-                </article>
-              </BorderGlow>
-            ))}
-          </div>
         </div>
       </section>
 
