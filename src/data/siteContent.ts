@@ -1077,7 +1077,7 @@ export const benefitHighlights = [
     description:
       "Round-the-clock oversight, medication reminders, and responsive communication so families never feel out of the loop.",
     lucideIcon: "HeartHandshake",
-    image: "/images/usedImages/4.png",
+    image: "/images/usedimages/4.png",
   },
   {
     stat: "1:1",
@@ -1085,7 +1085,7 @@ export const benefitHighlights = [
     description:
       "Every resident receives a tailored plan built around mobility, preferences, health goals, and family input—never a one-size template.",
     lucideIcon: "ClipboardCheck",
-    image: "/images/usedImages/homcare.png",
+    image: "/images/usedimages/homcare.png",
   },
 ] as const;
 
